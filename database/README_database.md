@@ -114,7 +114,7 @@ O banco de dados `weg_seguranca` está hospedado na plataforma **Railway**, o qu
 
 ## Credenciais de Conexão
 
-| Parâmetro        | Valor                                 |
+| Parâmetro        | Valor                                  |
 |------------------|----------------------------------------|
 | Hostname         | `switchyard.proxy.rlwy.net`            |
 | Porta            | `23670`                                |

@@ -1,5 +1,5 @@
-CREATE DATABASE IF NOT EXISTS weg_seguranca;
-USE weg_seguranca;
+CREATE DATABASE IF NOT EXISTS railway;
+USE railway;
 
 CREATE TABLE IF NOT EXISTS emergencias (
     id INT PRIMARY KEY AUTO_INCREMENT,

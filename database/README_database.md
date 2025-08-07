@@ -107,3 +107,18 @@ Associa uma pessoa a uma emergência, apenas se ela estiver marcada com `situaca
 
 ### associar_sala_emergencia(sala_id, emergencia_id)  
 Associa uma sala a uma emergência, marcando a sala como em situação de risco e vinculando-a à emergência. Também insere um registro na tabela de relação `salas_emergencias`.
+
+# Acesso ao Banco de Dados
+
+O banco de dados `weg_seguranca` está hospedado na plataforma **Railway**, o que permite acesso remoto para desenvolvimento, testes e integração com sistemas externos.
+
+## Credenciais de Conexão
+
+| Parâmetro        | Valor                                 |
+|------------------|----------------------------------------|
+| Hostname         | `switchyard.proxy.rlwy.net`            |
+| Porta            | `23670`                                |
+| Usuário          | `root`                                 |
+| Senha            | `ASXuAZBXFgKPrgBhEWZvJTGCncZIxqXt`     |
+| Nome do Banco    | `railway`                              |
+| Nome da Conexão  | `weg_seguranca`                        |

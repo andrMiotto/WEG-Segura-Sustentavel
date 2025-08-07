@@ -174,3 +174,19 @@ BEGIN
 END;
 //
 DELIMITER ;
+
+CREATE INDEX idx_emergencias_em_andamento ON emergencias(em_andamento);
+CREATE INDEX idx_emergencias_inicio ON emergencias(inicio);
+
+CREATE INDEX idx_salas_numero ON salas(numero);
+CREATE INDEX idx_salas_bloco ON salas(bloco);
+CREATE INDEX idx_salas_unidade ON salas(unidade);
+CREATE INDEX idx_salas_id_emergencia ON salas(id_emergencia_atual);
+
+CREATE INDEX idx_pessoas_cadastro ON pessoas(cadastro);
+CREATE INDEX idx_pessoas_tipo ON pessoas(tipo);
+CREATE INDEX idx_pessoas_id_sala ON pessoas(id_sala_atual);
+CREATE INDEX idx_pessoas_id_emergencia ON pessoas(id_emergencia_atual);
+
+CREATE INDEX idx_salas_emergencias_sala_id ON salas_emergencias(sala_id);
+CREATE INDEX idx_salas_emergencias_emergencia_id ON salas_emergencias(emergencia_id);

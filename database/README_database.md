@@ -112,13 +112,39 @@ Associa uma sala a uma emergência, marcando a sala como em situação de risco 
 
 O banco de dados `weg_seguranca` está hospedado na plataforma **Railway**, o que permite acesso remoto para desenvolvimento, testes e integração com sistemas externos.
 
-## Credenciais de Conexão
+## 🎯 Conexão com o Banco de Dados - Railway (MySQL)
 
-| Parâmetro        | Valor                                  |
-|------------------|----------------------------------------|
-| Hostname         | `switchyard.proxy.rlwy.net`            |
-| Porta            | `23670`                                |
-| Usuário          | `root`                                 |
-| Senha            | `ASXuAZBXFgKPrgBhEWZvJTGCncZIxqXt`     |
-| Nome do Banco    | `railway`                              |
-| Nome da Conexão  | `weg_seguranca`                        |
+### 🌐 Acesso Externo (Público)
+
+| Parâmetro        | Valor                                                                                   |
+|------------------|-----------------------------------------------------------------------------------------|
+| **Host**         | `switchyard.proxy.rlwy.net`                                                             |
+| **Porta**        | `23670`                                                                                 |
+| **Usuário**      | `root`                                                                                  |
+| **Senha**        | `ASXuAZBXFgKPrgBhEWZvJTGCncZIxqXt`                                                      |
+| **Banco**        | `railway`                                                                               |
+| **URL completa** | `mysql://root:ASXuAZBXFgKPrgBhEWZvJTGCncZIxqXt@switchyard.proxy.rlwy.net:23670/railway` |
+
+---
+
+### 🛡️ Acesso Interno (Dentro do Railway)
+
+| Parâmetro        | Valor                                                                               |
+|------------------|-------------------------------------------------------------------------------------|
+| **Host**         | `mysql.railway.internal`                                                            |
+| **Porta**        | `3306`                                                                              |
+| **Usuário**      | `root`                                                                              |
+| **Senha**        | `ASXuAZBXFgKPrgBhEWZvJTGCncZIxqXt`                                                  |
+| **Banco**        | `railway`                                                                           |
+| **URL completa** | `mysql://root:ASXuAZBXFgKPrgBhEWZvJTGCncZIxqXt@mysql.railway.internal:3306/railway` |
+
+---
+
+### ✅ Exemplo de uso no JDBC (Java)
+
+```java
+String url = "jdbc:mysql://switchyard.proxy.rlwy.net:23670/railway";
+String usuario = "root";
+String senha = "ASXuAZBXFgKPrgBhEWZvJTGCncZIxqXt";
+
+Connection conexao = DriverManager.getConnection(url, usuario, senha);

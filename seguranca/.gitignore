@@ -18,6 +18,10 @@ target/
 *.iws
 *.iml
 *.ipr
+.idea/modules.xml
+.idea/jarRepositories.xml
+.idea/compiler.xml
+.idea/libraries/
 
 ### NetBeans ###
 /nbproject/private/
@@ -31,3 +35,11 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Mac OS ###
+.DS_Store
+
+/shelf/
+/workspace.xml
+# Environment-dependent path to Maven home directory
+/mavenHomeManager.xml

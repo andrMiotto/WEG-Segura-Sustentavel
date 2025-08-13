@@ -37,6 +37,7 @@ WEG-Segura-Sustentavel/
 │   ├── setup-all.sh                 # Script Linux/Mac para setup completo
 │   ├── setup-all.bat                # Script Windows para setup completo
 │   ├── README-setup.md              # Guia de setup dos bancos
+│   ├── CHANGELOG.md                 # Histórico de mudanças e versões
 │   └── README_database.md            # Este arquivo (documentação técnica)
 ├── 📁 src/
 │   └── 📁 main/
@@ -246,3 +247,10 @@ from(bucket: "WegSegura")
 - **DBeaver**: Cliente universal para consultas e administração de ambos os bancos
 - **Docker**: Para execução local do InfluxDB v2 em container
 - **Maven**: Para build e gerenciamento de dependências
+
+## 📚 Documentação Adicional
+
+- **[README-setup.md](./README-setup.md)**: Guia completo de setup dos bancos de dados
+- **[CHANGELOG.md](./CHANGELOG.md)**: Histórico de mudanças e versões
+- **[MySQL/queries-examples.sql](./MySQL/queries-examples.sql)**: Exemplos de consultas SQL
+- **[InfluxDB/queries-examples.flux](./InfluxDB/queries-examples.flux)**: Exemplos de consultas Flux

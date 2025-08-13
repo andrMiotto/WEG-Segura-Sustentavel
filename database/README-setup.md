@@ -200,3 +200,10 @@ Para adicionar novos serviços ou modificar configurações:
 - **Issues:** Abra uma issue no GitHub
 - **Logs:** Use `docker-compose logs` para debug
 - **Documentação:** Consulte `README_database.md` para detalhes técnicos
+
+## 📚 Documentação Relacionada
+
+- **[README_database.md](./README_database.md)**: Documentação técnica detalhada
+- **[CHANGELOG.md](./CHANGELOG.md)**: Histórico de mudanças e versões
+- **[MySQL/queries-examples.sql](./MySQL/queries-examples.sql)**: Exemplos de consultas SQL
+- **[InfluxDB/queries-examples.flux](./InfluxDB/queries-examples.flux)**: Exemplos de consultas Flux

@@ -1,4 +1,10 @@
-# Dicionário de Dados - Banco de Dados `weg_seguranca`
+# Projeto Weg Segura
+
+## Banco de Dados Relacional (MySQL)
+
+O banco de dados relacional principal é **MySQL**, utilizado para armazenar informações estruturadas sobre **emergências, salas e pessoas**. Ele está hospedado na plataforma **Clever Cloud**, permitindo acesso remoto seguro para desenvolvimento, testes e integração com sistemas externos.
+
+### Dicionário de Dados
 
 | Tabela            | Atributo              | Tipo                      | Restrições                                 | Descrição                                                      |
 |-------------------|----------------------|---------------------------|--------------------------------------------|----------------------------------------------------------------|
@@ -26,95 +32,15 @@
 |                   | `sala_id`             | INT                       | FK `salas(id)`, NOT NULL                    | Sala associada                                               |
 |                   | `emergencia_id`       | INT                       | FK `emergencias(id)`, NOT NULL              | Emergência associada                                         |
 
-# Explicação das Views
+### Views, Triggers e Stored Procedures
 
-### view_pessoas_em_emergencias  
-Lista pessoas que estão associadas a uma emergência ativa, mostrando seus dados básicos e o status da emergência.
+O banco possui **views, triggers e stored procedures** para facilitar o monitoramento e atualização automática de status de pessoas e salas durante emergências.
 
-### view_pessoas_por_sala  
-Exibe a relação entre pessoas e a sala onde elas estão alocadas, com informações de identificação e tipo.
+- **Views**: ex. `view_pessoas_em_emergencias`, `view_pessoa_situacao` — mostram relação entre pessoas, salas e emergências ativas.
+- **Trigger `trg_finalizar_emergencia`**: atualiza pessoas e salas ao encerrar uma emergência.
+- **Stored Procedures**: `registrar_emergencia`, `encerrar_emergencia`, `associar_pessoa_emergencia`, `associar_sala_emergencia`.
 
-### view_pessoa_situacao  
-Combina informações da pessoa, sua sala atual, e a emergência em andamento (se houver), incluindo status de risco.
-
-### view_emergencias_pessoas  
-Relaciona emergências com as pessoas afetadas, mostrando dados da emergência e das pessoas.
-
-### view_emergencia_salas  
-Exibe as emergências que estão em andamento e as salas associadas a elas, com status de risco da sala.
-
-
-# Explicação da Trigger
-
-### trg_finalizar_emergencia  
-Executada após atualização na tabela `emergencias`. Quando uma emergência muda de `em_andamento = TRUE` para `FALSE`, essa trigger:  
-- Atualiza todas as pessoas associadas para `situacao_de_risco = FALSE` e limpa o vínculo com a emergência atual (`id_emergencia_atual = NULL`).  
-- Atualiza todas as salas afetadas, removendo o status de risco e desvinculando da emergência.
-
-  
-# Explicação das Stored Procedures (SP)
-
-### registrar_emergencia(p_titulo, p_descricao)  
-Cria uma nova emergência, inserindo o título, descrição e setando o status como `em_andamento = TRUE`.
-
-### encerrar_emergencia(emergencia_id)  
-Finaliza uma emergência existente, definindo o horário de término (`fim`) e mudando o status para `em_andamento = FALSE`.
-
-### associar_pessoa_emergencia(pessoa_id, emergencia_id)  
-Associa uma pessoa a uma emergência, apenas se ela estiver marcada com `situacao_de_risco = TRUE`. Atualiza o campo `id_emergencia_atual`.
-
-### associar_sala_emergencia(sala_id, emergencia_id)  
-Associa uma sala a uma emergência, marcando a sala como em situação de risco e vinculando-a à emergência. Também insere um registro na tabela de relação `salas_emergencias`.
-
-
-
-# Explicação das Views
-
-### view_pessoas_em_emergencias  
-Lista pessoas que estão associadas a uma emergência ativa, mostrando seus dados básicos e o status da emergência.
-
-### view_pessoas_por_sala  
-Exibe a relação entre pessoas e a sala onde elas estão alocadas, com informações de identificação e tipo.
-
-### view_pessoa_situacao  
-Combina informações da pessoa, sua sala atual, e a emergência em andamento (se houver), incluindo status de risco.
-
-### view_emergencias_pessoas  
-Relaciona emergências com as pessoas afetadas, mostrando dados da emergência e das pessoas.
-
-### view_emergencia_salas  
-Exibe as emergências que estão em andamento e as salas associadas a elas, com status de risco da sala.
-
-
-# Explicação da Trigger
-
-### trg_finalizar_emergencia  
-Executada após atualização na tabela `emergencias`. Quando uma emergência muda de `em_andamento = TRUE` para `FALSE`, essa trigger:  
-- Atualiza todas as pessoas associadas para `situacao_de_risco = FALSE` e limpa o vínculo com a emergência atual (`id_emergencia_atual = NULL`).  
-- Atualiza todas as salas afetadas, removendo o status de risco e desvinculando da emergência.
-
-  
-# Explicação das Stored Procedures (SP)
-
-### registrar_emergencia(p_titulo, p_descricao)  
-Cria uma nova emergência, inserindo o título, descrição e setando o status como `em_andamento = TRUE`.
-
-### encerrar_emergencia(emergencia_id)  
-Finaliza uma emergência existente, definindo o horário de término (`fim`) e mudando o status para `em_andamento = FALSE`.
-
-### associar_pessoa_emergencia(pessoa_id, emergencia_id)  
-Associa uma pessoa a uma emergência, apenas se ela estiver marcada com `situacao_de_risco = TRUE`. Atualiza o campo `id_emergencia_atual`.
-
-### associar_sala_emergencia(sala_id, emergencia_id)  
-Associa uma sala a uma emergência, marcando a sala como em situação de risco e vinculando-a à emergência. Também insere um registro na tabela de relação `salas_emergencias`.
-
-# Acesso ao Banco de Dados
-
-O banco de dados está hospedado na plataforma **Clever Cloud**, o que permite acesso remoto para desenvolvimento, testes e integração com sistemas externos.
-
-## Credenciais de Conexão
-
-O projeto utiliza MySQL hospedado no Clever Cloud. As credenciais de conexão são as seguintes:
+### Credenciais de Conexão MySQL
 
 | Parâmetro        | Valor                                                  |
 |------------------|--------------------------------------------------------|
@@ -124,3 +50,45 @@ O projeto utiliza MySQL hospedado no Clever Cloud. As credenciais de conexão s�
 | Senha            | `zXUOwzICMsDyvmzTVVqV`                                 |
 | Nome do Banco    | `bmjbvsmlzkvrphhok83p`                                 |
 | Nome da Conexão  | `Weg Segura`                                           |
+
+---
+
+## Banco de Dados de Logs (InfluxDB)
+
+O **InfluxDB** é um **banco de dados não relacional**, orientado a **séries temporais**, projetado para armazenar **grandes volumes de dados de sensores e logs** com alta performance. Ele será usado como **registro de logs dos sensores IoT**.
+
+### Acesso InfluxDB
+
+- **URL:** `http://localhost:8086`
+- **Organização:** `WegSegura`
+- **Bucket:** `WegSegura`
+- **Token (All Access):** `nU8725HIFJQYxLu0dbOKyVuNjQfrBaZf0bSi6pakaVNkG3BbygOEzSjtTRJ9sZ1JtdHfCZ9YXRPlWCbIQgHr0g==`
+
+### Sintaxe de Inserção de Dados
+
+Cada ponto no InfluxDB possui:
+
+- **Measurement** → nome do conjunto de dados (ex: `logs_sensores`)
+- **Tags** → metadados indexados (ex: `sala`, `pessoa`)
+- **Fields** → valores reais do dado (ex: `ha_movimento_na_sala`)
+- **Timestamp** → instante de registro
+
+Exemplo em Java:
+
+```java
+Point ponto1 = Point.measurement("logs_sensores")
+        .addTag("sala", "1")
+        .addTag("pessoa", "10")
+        .addField("ha_movimento_na_sala", true)
+        .time(System.currentTimeMillis(), WritePrecision.MS);
+
+### Exemplo de Consulta no InfluxDB
+
+As consultas no InfluxDB são feitas utilizando a **linguagem Flux**, que permite filtrar e processar séries temporais de forma eficiente.  
+
+#### Exemplo 1: Última hora de dados dos sensores
+
+```flux
+from(bucket: "WegSegura")
+  |> range(start: -1h)
+  |> filter(fn: (r) => r._measurement == "logs_sensores")

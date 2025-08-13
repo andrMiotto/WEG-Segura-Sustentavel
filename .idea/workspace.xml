@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97db4099-e1f6-4a40-935f-93dd0eaf3f36" name="Changes" comment="docs: atualiza as credenciais de conexão no README_database.md">
-      <change afterPath="$PROJECT_DIR$/database/InfluxDB/InfluxDBInsercao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/TesteConexaoCleverCloud.java" beforeDir="false" afterPath="$PROJECT_DIR$/database/MySQL/TesteConexaoCleverCloud.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/TesteInsercao.java" beforeDir="false" afterPath="$PROJECT_DIR$/database/MySQL/TesteInsercao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/database_reduzido.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database/MySQL/database_reduzido.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/database_v1.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database/MySQL/database_v1.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/diagrama.mwb" beforeDir="false" afterPath="$PROJECT_DIR$/database/MySQL/diagrama.mwb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-    </list>
+    <list default="true" id="97db4099-e1f6-4a40-935f-93dd0eaf3f36" name="Changes" comment="docs: adiciona informações do InfluxDB no README_database.md" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -96,7 +87,23 @@
       <option name="presentableId" value="Default" />
       <updated>1755122776301</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="feat: implementa o uso de IngluxDB">
+      <option name="closed" value="true" />
+      <created>1755125967501</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1755125967502</updated>
+    </task>
+    <task id="LOCAL-00005" summary="docs: adiciona informações do InfluxDB no README_database.md">
+      <option name="closed" value="true" />
+      <created>1755126515292</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1755126515292</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -104,6 +111,8 @@
     <MESSAGE value="docs: arruma espaçamento da tabela" />
     <MESSAGE value="config: adiciona &quot;*.iml&quot; ao .gitignore" />
     <MESSAGE value="docs: atualiza as credenciais de conexão no README_database.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="docs: atualiza as credenciais de conexão no README_database.md" />
+    <MESSAGE value="feat: implementa o uso de IngluxDB" />
+    <MESSAGE value="docs: adiciona informações do InfluxDB no README_database.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="docs: adiciona informações do InfluxDB no README_database.md" />
   </component>
 </project>

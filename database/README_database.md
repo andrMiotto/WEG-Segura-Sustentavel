@@ -1,6 +1,80 @@
-# Projeto Weg Segura
+# Projeto Weg Segura - Documentação do Banco de Dados
 
-## Banco de Dados Relacional (MySQL)
+## 📋 Visão Geral do Projeto
+
+O **WEG Segura Sustentável** é um sistema de segurança inteligente que monitora emergências em tempo real, utilizando sensores IoT para detectar movimentação em salas e rastrear pessoas durante situações de risco. O sistema integra bancos de dados relacionais (MySQL) e de séries temporais (InfluxDB) para fornecer uma solução completa de monitoramento e resposta a emergências.
+
+## 🏗️ Arquitetura do Sistema
+
+```
+┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
+│   Sensores IoT  │    │   Aplicação     │    │   Bancos de     │
+│   (Movimento)   │───▶│   Java          │───▶│   Dados         │
+└─────────────────┘    └─────────────────┘    └─────────────────┘
+                                │                       │
+                                ▼                       ▼
+                       ┌─────────────────┐    ┌─────────────────┐
+                       │   Interface     │    │   InfluxDB      │
+                       │   Web (HTML)    │    │   (Logs)        │
+                       └─────────────────┘    └─────────────────┘
+```
+
+## 🛠️ Tecnologias Utilizadas
+
+- **Linguagem:** Java 22
+- **Build Tool:** Maven 3.11.0
+- **Banco Relacional:** MySQL 8.0
+- **Banco de Séries Temporais:** InfluxDB 6.11.0
+- **Interface:** HTML/CSS
+- **Hospedagem:** Clever Cloud (MySQL)
+
+### 🗄️ Ferramentas de Banco de Dados
+
+- **MySQL Workbench**: Para modelagem, design e administração do banco MySQL
+- **DBeaver**: Cliente universal de banco de dados para consultas e gerenciamento
+- **Docker**: Containerização do InfluxDB para desenvolvimento local
+- **InfluxDB v2**: Versão específica utilizada para logs de séries temporais
+
+## 📁 Estrutura do Projeto
+
+```
+WEG-Segura-Sustentavel/
+├── 📁 database/
+│   ├── 📁 MySQL/
+│   │   ├── database_v1.sql          # Schema completo do banco
+│   │   ├── database_reduzido.sql    # Schema simplificado para testes
+│   │   ├── diagrama.mwb             # Diagrama do banco (MySQL Workbench)
+│   │   ├── TesteConexaoCleverCloud.java  # Teste de conexão remota
+│   │   ├── TesteInsercao.java       # Teste de inserção de dados
+│   │   ├── docker-compose.yml       # Setup MySQL local com Docker
+│   │   ├── setup-mysql.sh           # Script Linux/Mac para MySQL
+│   │   ├── setup-mysql.bat          # Script Windows para MySQL
+│   │   └── queries-examples.sql     # Exemplos de consultas SQL
+│   ├── 📁 InfluxDB/
+│   │   ├── InfluxDBInsercao.java    # Classe para inserção de logs
+│   │   ├── docker-compose.yml       # Setup InfluxDB local com Docker
+│   │   ├── setup-influxdb.sh        # Script Linux/Mac para InfluxDB
+│   │   ├── setup-influxdb.bat       # Script Windows para InfluxDB
+│   │   └── queries-examples.flux    # Exemplos de consultas Flux
+│   ├── docker-compose.yml            # Setup completo (MySQL + InfluxDB + phpMyAdmin)
+│   ├── setup-all.sh                 # Script Linux/Mac para setup completo
+│   ├── setup-all.bat                # Script Windows para setup completo
+│   ├── README-setup.md              # Guia de setup dos bancos
+│   └── README_database.md            # Este arquivo (documentação técnica)
+├── 📁 src/
+│   └── 📁 main/
+│       ├── 📁 java/
+│       │   └── 📁 org/weg/
+│       │       └── Main.java         # Classe principal da aplicação
+│       └── 📁 resources/
+│           └── 📁 templates/
+│               ├── index.html        # Interface web principal
+│               └── style.css         # Estilos da interface
+├── pom.xml                           # Configuração Maven
+└── README.md                         # Documentação geral do projeto
+```
+
+## 🗄️ Banco de Dados Relacional (MySQL)
 
 O banco de dados relacional principal é **MySQL**, utilizado para armazenar informações estruturadas sobre **emergências, salas e pessoas**. Ele está hospedado na plataforma **Clever Cloud**, permitindo acesso remoto seguro para desenvolvimento, testes e integração com sistemas externos.
 
@@ -53,7 +127,7 @@ O banco possui **views, triggers e stored procedures** para facilitar o monitora
 
 ---
 
-## Banco de Dados de Logs (InfluxDB)
+## 📊 Banco de Dados de Logs (InfluxDB)
 
 O **InfluxDB** é um **banco de dados não relacional**, orientado a **séries temporais**, projetado para armazenar **grandes volumes de dados de sensores e logs** com alta performance. Ele será usado como **registro de logs dos sensores IoT**.
 
@@ -93,3 +167,105 @@ As consultas no InfluxDB são feitas utilizando a **linguagem Flux**, que permit
 from(bucket: "WegSegura")
   |> range(start: -1h)
   |> filter(fn: (r) => r._measurement == "logs_sensores")
+```
+
+#### Exemplo 2: Dados de uma sala específica
+
+```flux
+from(bucket: "WegSegura")
+  |> range(start: -24h)
+  |> filter(fn: (r) => r._measurement == "logs_sensores" and r.sala == "1")
+  |> aggregateWindow(every: 5m, fn: mean)
+```
+
+## 🚀 Como Executar o Projeto
+
+### Pré-requisitos
+
+- Java 22 ou superior
+- Maven 3.11.0 ou superior
+- MySQL 8.0 (local ou remoto)
+- InfluxDB 2.x (local)
+
+### Configuração
+
+#### Opção 1: Setup Automatizado com Docker (Recomendado)
+
+1. **Clone o repositório:**
+   ```bash
+   git clone [URL_DO_REPOSITORIO]
+   cd WEG-Segura-Sustentavel
+   cd database
+   ```
+
+2. **Execute o setup completo:**
+   ```bash
+   # Linux/Mac
+   chmod +x *.sh MySQL/*.sh InfluxDB/*.sh
+   ./setup-all.sh
+   
+   # Windows
+   setup-all.bat
+   ```
+
+3. **Acesse os serviços:**
+   - **phpMyAdmin (MySQL):** http://localhost:8080
+   - **InfluxDB:** http://localhost:8086
+   - **MySQL CLI:** `mysql -h localhost -P 3306 -u weg_user -p weg_segura`
+
+#### Opção 2: Setup Manual
+
+1. **Clone o repositório:**
+   ```bash
+   git clone [URL_DO_REPOSITORIO]
+   cd WEG-Segura-Sustentavel
+   ```
+
+2. **Configure o banco MySQL:**
+   - Execute o script `database/MySQL/database_v1.sql` no seu MySQL
+   - Ou use o banco remoto na Clever Cloud (credenciais acima)
+   - **MySQL Workbench**: Abra o arquivo `database/MySQL/diagrama.mwb` para visualizar o modelo do banco
+   - **DBeaver**: Conecte-se ao banco para consultas e gerenciamento
+
+3. **Configure o InfluxDB:**
+   - **Docker**: Execute `docker run -d -p 8086:8086 influxdb:2.0` para InfluxDB v2
+   - Crie a organização `WegSegura` e o bucket `WegSegura`
+   - Configure o token de acesso
+   - **DBeaver**: Conecte-se ao InfluxDB para visualização dos dados
+
+4. **Compile o projeto:**
+   ```bash
+   mvn clean compile
+   ```
+
+5. **Execute os testes:**
+   ```bash
+   # Teste de conexão MySQL
+   mvn exec:java -Dexec.mainClass="database.MySQL.TesteConexaoCleverCloud"
+   
+   # Teste de inserção MySQL
+   mvn exec:java -Dexec.mainClass="database.MySQL.TesteInsercao"
+   
+   # Teste de inserção InfluxDB
+   mvn exec:java -Dexec.mainClass="database.InfluxDB.InfluxDBInsercao"
+   ```
+
+## 🔧 Desenvolvimento
+
+### Estrutura de Classes Java
+
+- **`TesteConexaoCleverCloud.java`**: Testa conexão com MySQL remoto
+- **`TesteInsercao.java`**: Testa inserção de dados no MySQL
+- **`InfluxDBInsercao.java`**: Gerencia inserção de logs no InfluxDB
+
+### Dependências Maven
+
+- **`mysql-connector-java:8.0.33`**: Driver MySQL para Java
+- **`influxdb-client-java:6.11.0`**: Cliente oficial do InfluxDB
+
+### 🛠️ Ferramentas de Desenvolvimento
+
+- **MySQL Workbench**: Para modelagem e design do banco de dados
+- **DBeaver**: Cliente universal para consultas e administração de ambos os bancos
+- **Docker**: Para execução local do InfluxDB v2 em container
+- **Maven**: Para build e gerenciamento de dependências

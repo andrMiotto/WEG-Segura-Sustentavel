@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: weg-segura-mysql
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=wegsegura123
+      - MYSQL_DATABASE=weg_segura
+      - MYSQL_USER=weg_user
+      - MYSQL_PASSWORD=wegsegura123
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./database_v1.sql:/docker-entrypoint-initdb.d/database_v1.sql
+      - ./database_reduzido.sql:/docker-entrypoint-initdb.d/database_reduzido.sql
+    restart: unless-stopped
+    command: --default-authentication-plugin=mysql_native_password
+
+volumes:
+  mysql_data:

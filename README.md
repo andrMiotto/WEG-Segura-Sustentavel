@@ -60,6 +60,19 @@ O projeto permite controle em tempo real, emissão de relatórios automáticos e
 
 # Tecnologias Utilizadas 👾
 
+<p align="left">
+    <img alt="Node-RED" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodered/nodered-original.svg" width="40" height="40" hspace="15" />
+    <img alt="JPA / Hibernate" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/hibernate/hibernate-original.svg" width="40" height="40" hspace="15" />
+    <img alt="Spring Boot" src="assets/README/springboot.png" width="80" height="80" hspace="15" />
+    <img alt="Jira" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg" width="40" height="40" hspace="15" />
+    <img alt="HTML5" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" width="40" height="40" hspace="15" />
+    <img alt="CSS3" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" width="40" height="40" hspace="15" />
+    <img alt="Java" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" width="40" height="40" hspace="15" />
+    <img alt="C++" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" width="40" height="40" hspace="15" />
+    <img alt="ESP32" src="assets/README/esp32.png" width="40" height="40" hspace="15" />
+    <img alt="MySQL Workbench" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" width="40" height="40" hspace="15" />
+    <img alt="WEGnology" src="assets/README/wegnology.jpg" width="80" height="150" hspace="15" />
+</p>
 
 # Como foi Desenvolvido 🤔
 
@@ -101,9 +114,10 @@ O sistema foi projetado para seguir integralmente a Lei Geral de Proteção de D
 
 # Autores 👤
 
-| <img loading="lazy" src="https://github.com/user-attachments/assets/c9277e3f-f8d7-4bdc-b351-fd665145d635" width="115"><br><sub><a href="https://github.com/Liiiiisssz">Elis Jasper</a><br><span style="color:#8A2BE2"></span></sub> | <img loading="lazy" src="https://github.com/user-attachments/assets/f1da660f-f2a2-40bd-a466-bad4d5351e6d" width="115"><br><sub><a href="https://github.com/Viihh-77">Gabrielli Vitória Glowatski</a><br><span style="color:#00BFFF"></span></sub> | <img loading="lazy" src="https://github.com/user-attachments/assets/9a812c36-e6c9-4009-a76b-20749d0a0a47" width="115"><br><sub><a href="https://github.com/Ana18022008">Ana Beatriz O. Ribeiro</a><br><span style="color:#32CD32"></span></sub> |
-| :---: | :---: | :---: |
+| <img loading="lazy" src="https://github.com/user-attachments/assets/c9277e3f-f8d7-4bdc-b351-fd665145d635" width="115"><br><sub><a href="https://github.com/Liiiiisssz">Elis Jasper</a><br><span style="color:#8A2BE2"></span></sub> | <img loading="lazy" src="https://github.com/user-attachments/assets/f1da660f-f2a2-40bd-a466-bad4d5351e6d" width="115"><br><sub><a href="https://github.com/Viihh-77">Gabrielli Vitória Glowatski</a><br><span style="color:#00BFFF"></span></sub> | <img loading="lazy" src="https://github.com/user-attachments/assets/9a812c36-e6c9-4009-a76b-20749d0a0a47" width="115"><br><sub><a href="https://github.com/Ana18022008">Ana Beatriz O. Ribeiro</a><br><span style="color:#32CD32"></span></sub> |  <img loading="lazy" src="assets/README/" width="115"><br><sub><a href="https://github.com">Carlos Eduardo Braga</a><br><span style="color:#32CD32"></span></sub> |
+| :---: | :---: | :---: | :---: |
 
 
  
+
 

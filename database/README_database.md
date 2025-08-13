@@ -4,36 +4,13 @@
 
 O **WEG Segura Sustentável** é um sistema de segurança inteligente que monitora emergências em tempo real, utilizando sensores IoT para detectar movimentação em salas e rastrear pessoas durante situações de risco. O sistema integra bancos de dados relacionais (MySQL) e de séries temporais (InfluxDB) para fornecer uma solução completa de monitoramento e resposta a emergências.
 
-## 🏗️ Arquitetura do Sistema
-
-```
-┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
-│   Sensores IoT  │    │   Aplicação     │    │   Bancos de     │
-│   (Movimento)   │───▶│   Java          │───▶│   Dados         │
-└─────────────────┘    └─────────────────┘    └─────────────────┘
-                                │                       │
-                                ▼                       ▼
-                       ┌─────────────────┐    ┌─────────────────┐
-                       │   Interface     │    │   InfluxDB      │
-                       │   Web (HTML)    │    │   (Logs)        │
-                       └─────────────────┘    └─────────────────┘
-```
-
 ## 🛠️ Tecnologias Utilizadas
 
 - **Linguagem:** Java 22
 - **Build Tool:** Maven 3.11.0
 - **Banco Relacional:** MySQL 8.0
 - **Banco de Séries Temporais:** InfluxDB 6.11.0
-- **Interface:** HTML/CSS
-- **Hospedagem:** Clever Cloud (MySQL)
-
-### 🗄️ Ferramentas de Banco de Dados
-
-- **MySQL Workbench**: Para modelagem, design e administração do banco MySQL
-- **DBeaver**: Cliente universal de banco de dados para consultas e gerenciamento
-- **Docker**: Containerização do InfluxDB para desenvolvimento local
-- **InfluxDB v2**: Versão específica utilizada para logs de séries temporais
+- **Hospedagem:** Clever Cloud (MySQL) e Firebase (InfluxDB)
 
 ## 📁 Estrutura do Projeto
 

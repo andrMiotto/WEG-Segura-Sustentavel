@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97db4099-e1f6-4a40-935f-93dd0eaf3f36" name="Changes" comment="config: adiciona &quot;*.iml&quot; ao .gitignore" />
+    <list default="true" id="97db4099-e1f6-4a40-935f-93dd0eaf3f36" name="Changes" comment="docs: atualiza as credenciais de conexão no README_database.md">
+      <change afterPath="$PROJECT_DIR$/database/InfluxDB/InfluxDBInsercao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/TesteConexaoCleverCloud.java" beforeDir="false" afterPath="$PROJECT_DIR$/database/MySQL/TesteConexaoCleverCloud.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/TesteInsercao.java" beforeDir="false" afterPath="$PROJECT_DIR$/database/MySQL/TesteInsercao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/database_reduzido.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database/MySQL/database_reduzido.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/database_v1.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database/MySQL/database_v1.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/diagrama.mwb" beforeDir="false" afterPath="$PROJECT_DIR$/database/MySQL/diagrama.mwb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,13 +29,41 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "CaduBraga"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/andrMiotto/WEG-Segura-Sustentavel.git",
+    "accountId": "0dc33d00-054b-410f-977f-da83b861684b"
+  }
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 6
+}]]></component>
+  <component name="ProjectId" id="31FbTUOx1SwxhCTXYkO5qJzZXNZ" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.InfluxDBInsercao.executor": "Run",
     "Application.TesteConexaoCleverCloud.executor": "Run",
     "Application.TesteInsercao.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "database"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\carlos_e_braga\Desktop\prova\WEG-Segura-Sustentavel\database\MySQL" />
+    </key>
+  </component>
   <component name="TaskManager">
     <task id="LOCAL-00001" summary="docs: arruma espaçamento da tabela">
       <option name="closed" value="true" />
@@ -44,13 +81,29 @@
       <option name="project" value="LOCAL" />
       <updated>1755107489088</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="docs: atualiza as credenciais de conexão no README_database.md">
+      <option name="closed" value="true" />
+      <created>1755108550347</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1755108550347</updated>
+    </task>
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="97db4099-e1f6-4a40-935f-93dd0eaf3f36" name="Changes" comment="docs: atualiza as credenciais de conexão no README_database.md" />
+      <created>1755122776301</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1755122776301</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat: implementa a hospedagem do banco de dados via Cloud Server" />
     <MESSAGE value="docs: arruma espaçamento da tabela" />
     <MESSAGE value="config: adiciona &quot;*.iml&quot; ao .gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="config: adiciona &quot;*.iml&quot; ao .gitignore" />
+    <MESSAGE value="docs: atualiza as credenciais de conexão no README_database.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="docs: atualiza as credenciais de conexão no README_database.md" />
   </component>
 </project>

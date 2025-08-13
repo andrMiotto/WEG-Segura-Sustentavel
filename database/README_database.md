@@ -110,15 +110,17 @@ Associa uma sala a uma emergência, marcando a sala como em situação de risco 
 
 # Acesso ao Banco de Dados
 
-O banco de dados `weg_seguranca` está hospedado na plataforma **Railway**, o que permite acesso remoto para desenvolvimento, testes e integração com sistemas externos.
+O banco de dados está hospedado na plataforma **Clever Cloud**, o que permite acesso remoto para desenvolvimento, testes e integração com sistemas externos.
 
 ## Credenciais de Conexão
 
-| Parâmetro        | Valor                                  |
-|------------------|----------------------------------------|
-| Hostname         | `switchyard.proxy.rlwy.net`            |
-| Porta            | `23670`                                |
-| Usuário          | `root`                                 |
-| Senha            | `ASXuAZBXFgKPrgBhEWZvJTGCncZIxqXt`     |
-| Nome do Banco    | `railway`                              |
-| Nome da Conexão  | `weg_seguranca`                        |
+O projeto utiliza MySQL hospedado no Clever Cloud. As credenciais de conexão são as seguintes:
+
+| Parâmetro        | Valor                                                  |
+|------------------|--------------------------------------------------------|
+| Hostname         | `bmjbvsmlzkvrphhok83p-mysql.services.clever-cloud.com` |
+| Porta            | `3306`                                                 |
+| Usuário          | `u0np3s8gbvzfctph`                                     |
+| Senha            | `zXUOwzICMsDyvmzTVVqV`                                 |
+| Nome do Banco    | `bmjbvsmlzkvrphhok83p`                                 |
+| Nome da Conexão  | `Weg Segura`                                           |

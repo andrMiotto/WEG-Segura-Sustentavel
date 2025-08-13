@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97db4099-e1f6-4a40-935f-93dd0eaf3f36" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/database/TesteConexaoCleverCloud.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/TesteInsercao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-    </list>
+    <list default="true" id="97db4099-e1f6-4a40-935f-93dd0eaf3f36" name="Changes" comment="config: adiciona &quot;*.iml&quot; ao .gitignore" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -34,6 +28,29 @@
   }
 }]]></component>
   <component name="TaskManager">
+    <task id="LOCAL-00001" summary="docs: arruma espaçamento da tabela">
+      <option name="closed" value="true" />
+      <created>1755107431571</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1755107431571</updated>
+    </task>
+    <task id="LOCAL-00002" summary="config: adiciona &quot;*.iml&quot; ao .gitignore">
+      <option name="closed" value="true" />
+      <created>1755107489088</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1755107489088</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="feat: implementa a hospedagem do banco de dados via Cloud Server" />
+    <MESSAGE value="docs: arruma espaçamento da tabela" />
+    <MESSAGE value="config: adiciona &quot;*.iml&quot; ao .gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="config: adiciona &quot;*.iml&quot; ao .gitignore" />
   </component>
 </project>

@@ -81,6 +81,7 @@ Point ponto1 = Point.measurement("logs_sensores")
         .addTag("pessoa", "10")
         .addField("ha_movimento_na_sala", true)
         .time(System.currentTimeMillis(), WritePrecision.MS);
+```
 
 ### Exemplo de Consulta no InfluxDB
 

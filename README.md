@@ -18,7 +18,6 @@
 ## 🛠 Tecnologias Utilizadas
 - **HTML5** - Estrutura das páginas
 - **CSS3** - Estilização e responsividade
-- **JavaScript (Vanilla)** - Lógica do front-end e integração com Node-RED
 - **Node-RED** - Orquestração do fluxo de dados entre front e back
 - **MQTT/HTTP** - Protocolos para envio e recebimento de dados
 
@@ -29,7 +28,7 @@
 2. Conversamos com outros grupos para entender como seria feita a integração com o **Node-RED** e padronizar formatos de envio/recebimento.
 3. Criamos a estrutura base do front-end, priorizando simplicidade e velocidade na exibição dos dados.
 4. Enfrentamos dificuldades na **integração com o back-end** por falta de experiência com essa comunicação, especialmente na ponte entre Node-RED e a aplicação Java.
-5. A solução temporária foi **integrar o front diretamente ao Node-RED** para receber os dados de forma mais rápida, enquanto aprendemos mais sobre a conexão com o Java.
+5. A solução foi de integrar diretamente com o Back-end, para ter uma comunicação mais rápida e já formatada
 
 ---
 
@@ -53,3 +52,4 @@ O fluxo de dados entre front-end e back-end funciona da seguinte forma:
    - Quando o usuário realiza uma ação no site (ex: enviar comando para um dispositivo), o front envia o comando para o Node-RED, que repassa ao sistema de controle ou ao Java.
 
 **Fluxo Resumido:**
+

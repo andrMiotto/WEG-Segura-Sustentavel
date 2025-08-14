@@ -109,23 +109,40 @@ O banco possui **views, triggers e stored procedures** para facilitar o monitora
 
 O **InfluxDB** é um **banco de dados não relacional**, orientado a **séries temporais**, projetado para armazenar **grandes volumes de dados de sensores e logs** com alta performance. Ele será usado como **registro de logs dos sensores IoT**.
 
-### Acesso InfluxDB
+---
+
+### 🔹 Acesso InfluxDB
 
 #### InfluxDB Local (Desenvolvimento)
-- **URL:** `http://localhost:8086`
-- **Organização:** `WegSegura`
-- **Bucket:** `WegSegura`
-- **Token (All Access):** `nU8725HIFJQYxLu0dbOKyVuNjQfrBaZf0bSi6pakaVNkG3BbygOEzSjtTRJ9sZ1JtdHfCZ9YXRPlWCbIQgHr0g==`
+
+- **URL (acesso local):** `http://localhost:8086`  
+- **Organização:** `WegSegura`  
+- **Bucket:** `WegSegura`  
+- **Token (All Access):** nU8725HIFJQYxLu0dbOKyVuNjQfrBaZf0bSi6pakaVNkG3BbygOEzSjtTRJ9sZ1JtdHfCZ9YXRPlWCbIQgHr0g==
+
+##### 🌐 **Acessando de outro PC na mesma rede local**
+Caso o InfluxDB esteja rodando via Docker ou instalado localmente, é possível acessar de outro computador substituindo `localhost` pelo **IP local** da máquina onde o serviço está sendo executado, que é **http://192.168.56.1:8086**.
 
 #### InfluxDB Cloud (Produção)
-- **URL:** `https://us-east-1-1.aws.cloud2.influxdata.com`
-- **Acesso Web:** `http://localhost:8086/signin?returnTo=/orgs/03c7ab261562918c/data-explorer`
-- **Usuário:** `admin`
-- **Senha:** `admin123`
-- **Organização:** `WegSegura`
-- **Bucket:** `WegSegura`
-- **Storage Provider:** AWS
-- **Token:** Configurado via variáveis de ambiente
+URL: https://us-east-1-1.aws.cloud2.influxdata.com
+
+Acesso Web (via túnel local):
+
+```bash
+http://localhost:8086/signin?returnTo=/orgs/03c7ab261562918c/data-explorer
+
+Usuário: admin
+
+Senha: admin123
+
+Organização: WegSegura
+
+Bucket: WegSegura
+
+Storage Provider: AWS
+
+Token: Configurado via variáveis de ambiente
+```
 
 ### Sintaxe de Inserção de Dados
 

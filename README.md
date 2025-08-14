@@ -48,8 +48,7 @@ O fluxo de dados entre front-end e back-end funciona da seguinte forma:
 4. **Consumo no Front-End**
    - O front-end consome os dados usando **fetch()** ou WebSocket, atualizando a interface em tempo real.
    
-5. **Ações do Usuário**
-   - Quando o usuário realiza uma ação no site (ex: enviar comando para um dispositivo), o front envia o comando para o Node-RED, que repassa ao sistema de controle ou ao Java.
 
 **Fluxo Resumido:**
+
 

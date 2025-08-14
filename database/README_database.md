@@ -1,6 +1,6 @@
 # Projeto Weg Segura - Documentação do Banco de Dados
 
-## 📋 Visão Geral do Projeto
+## 📋 Visão Geral
 
 O **WEG Segura Sustentável** é um sistema de segurança inteligente que monitora emergências em tempo real, utilizando sensores IoT para detectar movimentação em salas e rastrear pessoas durante situações de risco. O sistema integra bancos de dados relacionais (MySQL) e de séries temporais (InfluxDB) para fornecer uma solução completa de monitoramento e resposta a emergências.
 
@@ -10,7 +10,7 @@ O **WEG Segura Sustentável** é um sistema de segurança inteligente que monito
 - **Build Tool:** Maven 3.11.0
 - **Banco Relacional:** MySQL 8.0
 - **Banco de Séries Temporais:** InfluxDB 6.11.0
-- **Hospedagem:** Clever Cloud (MySQL) e InfluxDB Cloud (AWS)
+- **Hospedagem:** Clever Cloud (MySQL) e InfluxDB local (Docker)
 
 ## 📁 Estrutura do Projeto
 
@@ -113,38 +113,18 @@ O **InfluxDB** é um **banco de dados não relacional**, orientado a **séries t
 
 ### 🔹 Acesso InfluxDB
 
-#### InfluxDB Local (Desenvolvimento)
+#### Configuração Local
 
-- **URL (acesso local):** `http://localhost:8086`  
+- **URL (acesso local):** `http://localhost:8086` (ou `http://192.168.56.1:8086`)
 - **Organização:** `WegSegura`  
 - **Bucket:** `WegSegura`  
-- **Token (All Access):** nU8725HIFJQYxLu0dbOKyVuNjQfrBaZf0bSi6pakaVNkG3BbygOEzSjtTRJ9sZ1JtdHfCZ9YXRPlWCbIQgHr0g==
+- **Token (All Access):** `nU8725HIFJQYxLu0dbOKyVuNjQfrBaZf0bSi6pakaVNkG3BbygOEzSjtTRJ9sZ1JtdHfCZ9YXRPlWCbIQgHr0g==`
 
-##### 🌐 **Acessando de outro PC na mesma rede local**
-Caso o InfluxDB esteja rodando via Docker ou instalado localmente, é possível acessar de outro computador substituindo `localhost` pelo **IP local** da máquina onde o serviço está sendo executado, que é **http://192.168.56.1:8086**.
+### 🌐 Acesso de Outros PCs na Rede Local
 
-#### InfluxDB Cloud (Produção)
-URL: https://us-east-1-1.aws.cloud2.influxdata.com
+**Importante:** Quando o InfluxDB estiver rodando via Docker, para acessá-lo de outro computador na mesma rede, será necessário substituir `localhost` pelo **IP local** da máquina onde o serviço está sendo executado, que é **http://192.168.56.1:8086**.
 
-Acesso Web (via túnel local):
-
-```bash
-http://localhost:8086/signin?returnTo=/orgs/03c7ab261562918c/data-explorer
-
-Usuário: admin
-
-Senha: admin123
-
-Organização: WegSegura
-
-Bucket: WegSegura
-
-Storage Provider: AWS
-
-Token: Configurado via variáveis de ambiente
-```
-
-### Sintaxe de Inserção de Dados
+### Estrutura de Dados
 
 Cada ponto no InfluxDB possui:
 
@@ -153,7 +133,7 @@ Cada ponto no InfluxDB possui:
 - **Fields** → valores reais do dado (ex: `ha_movimento_na_sala`)
 - **Timestamp** → instante de registro
 
-Exemplo em Java:
+### Exemplo de Inserção em Java
 
 ```java
 Point ponto1 = Point.measurement("logs_sensores")
@@ -184,6 +164,8 @@ from(bucket: "WegSegura")
   |> aggregateWindow(every: 5m, fn: mean)
 ```
 
+---
+
 ## 🚀 Como Executar o Projeto
 
 ### Pré-requisitos
@@ -191,7 +173,7 @@ from(bucket: "WegSegura")
 - Java 22 ou superior
 - Maven 3.11.0 ou superior
 - MySQL 8.0 (local ou remoto)
-- InfluxDB 2.x (local)
+- Docker (para bancos locais)
 
 ### Configuração
 
@@ -200,8 +182,7 @@ from(bucket: "WegSegura")
 1. **Clone o repositório:**
    ```bash
    git clone [URL_DO_REPOSITORIO]
-   cd WEG-Segura-Sustentavel
-   cd database
+   cd WEG-Segura-Sustentavel/database
    ```
 
 2. **Execute o setup completo:**
@@ -215,8 +196,8 @@ from(bucket: "WegSegura")
    ```
 
 3. **Acesse os serviços:**
-   - **phpMyAdmin (MySQL):** http://localhost:8080
-   - **InfluxDB:** http://localhost:8086
+   - **phpMyAdmin (MySQL):** http://localhost:8080 (ou http://192.168.56.1:8080)
+   - **InfluxDB:** http://localhost:8086 (ou http://192.168.56.1:8086)
    - **MySQL CLI:** `mysql -h localhost -P 3306 -u weg_user -p weg_segura`
 
 #### Opção 2: Setup Manual
@@ -231,11 +212,9 @@ from(bucket: "WegSegura")
    - Execute o script `database/MySQL/database_v1.sql` no seu MySQL
    - Ou use o banco remoto na Clever Cloud (credenciais acima)
    - **MySQL Workbench**: Abra o arquivo `database/MySQL/diagrama.mwb` para visualizar o modelo do banco
-   - **DBeaver**: Conecte-se ao banco para consultas e gerenciamento
 
 3. **Configure o InfluxDB:**
-   - **Local (Docker)**: Execute `docker run -d -p 8086:8086 influxdb:2.0` para InfluxDB v2
-   - **Cloud**: Use o InfluxDB Cloud hospedado na AWS
+   - Execute `docker run -d -p 8086:8086 influxdb:2.0` para InfluxDB v2
    - Crie a organização `WegSegura` e o bucket `WegSegura`
    - Configure o token de acesso
    - **DBeaver**: Conecte-se ao InfluxDB para visualização dos dados
@@ -257,6 +236,8 @@ from(bucket: "WegSegura")
    mvn exec:java -Dexec.mainClass="database.InfluxDB.InfluxDBInsercao"
    ```
 
+---
+
 ## 🔧 Desenvolvimento
 
 ### Estrutura de Classes Java
@@ -275,8 +256,9 @@ from(bucket: "WegSegura")
 - **MySQL Workbench**: Para modelagem e design do banco de dados
 - **DBeaver**: Cliente universal para consultas e administração de ambos os bancos
 - **Docker**: Para execução local do InfluxDB v2 em container
-- **InfluxDB Cloud**: Para hospedagem em produção na AWS
 - **Maven**: Para build e gerenciamento de dependências
+
+---
 
 ## 📚 Documentação Adicional
 

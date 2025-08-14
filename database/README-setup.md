@@ -56,11 +56,17 @@ setup-influxdb.bat
 - **Interface Web:** phpMyAdmin em http://localhost:8080
 
 ### 2. InfluxDB 2.0
-- **Porta:** 8086
-- **Usuário:** `admin`
-- **Senha:** `wegsegura123`
-- **Organização:** `WegSegura`
-- **Bucket:** `WegSegura`
+- **Local (Docker):**
+  - **Porta:** 8086
+  - **Usuário:** `admin`
+  - **Senha:** `wegsegura123`
+  - **Organização:** `WegSegura`
+  - **Bucket:** `WegSegura`
+- **Cloud (AWS):**
+  - **URL:** `https://us-east-1-1.aws.cloud2.influxdata.com`
+  - **Organização:** `WegSegura`
+  - **Bucket:** `WegSegura`
+  - **Storage Provider:** AWS
 
 ### 3. phpMyAdmin
 - **Porta:** 8080
@@ -104,6 +110,7 @@ database/
 ├── setup-all.bat              # Script Windows para setup completo
 ├── README-setup.md            # Este arquivo
 ├── README_database.md         # Documentação técnica
+├── CHANGELOG.md               # Histórico de mudanças e versões
 ├── MySQL/
 │   ├── docker-compose.yml     # Setup apenas MySQL
 │   ├── setup-mysql.sh         # Script Linux/Mac para MySQL
@@ -153,7 +160,8 @@ docker-compose up -d
 ```bash
 # Aguardar mais tempo para inicialização
 # MySQL pode levar até 1 minuto para estar pronto
-# InfluxDB pode levar até 30 segundos
+# InfluxDB local pode levar até 30 segundos
+# InfluxDB Cloud: Verificar token e configurações de rede
 ```
 
 ## 🔒 Segurança
@@ -182,8 +190,11 @@ docker-compose logs -f
 # MySQL
 mysql -h localhost -P 3306 -u weg_user -p weg_segura
 
-# InfluxDB
+# InfluxDB Local
 curl http://localhost:8086/health
+
+# InfluxDB Cloud
+curl -H "Authorization: Token YOUR_TOKEN" https://us-east-1-1.aws.cloud2.influxdata.com/health
 ```
 
 ## 🤝 Contribuição

@@ -13,6 +13,11 @@ e este projeto adere ao [Versionamento Semântico](https://semver.org/lang/pt-BR
 - Exemplos de consultas SQL e Flux
 - Documentação completa de setup
 - Scripts de configuração cross-platform
+- Suporte ao InfluxDB Cloud (AWS) para produção
+
+### Modificado
+- Atualizada documentação para usar InfluxDB Cloud em vez de Firebase
+- Adicionadas informações sobre hospedagem na AWS
 
 ## [1.0.0] - 2024-12-XX
 
@@ -106,6 +111,8 @@ Este projeto usa [Versionamento Semântico](https://semver.org/lang/pt-BR/):
 - Incluir configurações para diferentes ambientes (dev, staging, prod)
 - Adicionar monitoramento de performance dos bancos
 - Incluir scripts de migração de dados
+- Configurações específicas para InfluxDB Cloud (AWS)
+- Scripts de sincronização entre ambiente local e cloud
 
 ### [1.2.0] - Planejado
 - Adicionar suporte a outros bancos de dados (PostgreSQL, MongoDB)

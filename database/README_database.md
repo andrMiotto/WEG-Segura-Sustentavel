@@ -10,7 +10,7 @@ O **WEG Segura Sustentável** é um sistema de segurança inteligente que monito
 - **Build Tool:** Maven 3.11.0
 - **Banco Relacional:** MySQL 8.0
 - **Banco de Séries Temporais:** InfluxDB 6.11.0
-- **Hospedagem:** Clever Cloud (MySQL) e Firebase (InfluxDB)
+- **Hospedagem:** Clever Cloud (MySQL) e InfluxDB Cloud (AWS)
 
 ## 📁 Estrutura do Projeto
 
@@ -111,10 +111,18 @@ O **InfluxDB** é um **banco de dados não relacional**, orientado a **séries t
 
 ### Acesso InfluxDB
 
+#### InfluxDB Local (Desenvolvimento)
 - **URL:** `http://localhost:8086`
 - **Organização:** `WegSegura`
 - **Bucket:** `WegSegura`
 - **Token (All Access):** `nU8725HIFJQYxLu0dbOKyVuNjQfrBaZf0bSi6pakaVNkG3BbygOEzSjtTRJ9sZ1JtdHfCZ9YXRPlWCbIQgHr0g==`
+
+#### InfluxDB Cloud (Produção)
+- **URL:** `https://us-east-1-1.aws.cloud2.influxdata.com`
+- **Organização:** `WegSegura`
+- **Bucket:** `WegSegura`
+- **Storage Provider:** AWS
+- **Token:** Configurado via variáveis de ambiente
 
 ### Sintaxe de Inserção de Dados
 
@@ -206,7 +214,8 @@ from(bucket: "WegSegura")
    - **DBeaver**: Conecte-se ao banco para consultas e gerenciamento
 
 3. **Configure o InfluxDB:**
-   - **Docker**: Execute `docker run -d -p 8086:8086 influxdb:2.0` para InfluxDB v2
+   - **Local (Docker)**: Execute `docker run -d -p 8086:8086 influxdb:2.0` para InfluxDB v2
+   - **Cloud**: Use o InfluxDB Cloud hospedado na AWS
    - Crie a organização `WegSegura` e o bucket `WegSegura`
    - Configure o token de acesso
    - **DBeaver**: Conecte-se ao InfluxDB para visualização dos dados
@@ -246,6 +255,7 @@ from(bucket: "WegSegura")
 - **MySQL Workbench**: Para modelagem e design do banco de dados
 - **DBeaver**: Cliente universal para consultas e administração de ambos os bancos
 - **Docker**: Para execução local do InfluxDB v2 em container
+- **InfluxDB Cloud**: Para hospedagem em produção na AWS
 - **Maven**: Para build e gerenciamento de dependências
 
 ## 📚 Documentação Adicional

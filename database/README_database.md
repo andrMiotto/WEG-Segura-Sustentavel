@@ -119,6 +119,9 @@ O **InfluxDB** é um **banco de dados não relacional**, orientado a **séries t
 
 #### InfluxDB Cloud (Produção)
 - **URL:** `https://us-east-1-1.aws.cloud2.influxdata.com`
+- **Acesso Web:** `http://localhost:8086/signin?returnTo=/orgs/03c7ab261562918c/data-explorer`
+- **Usuário:** `admin`
+- **Senha:** `admin123`
 - **Organização:** `WegSegura`
 - **Bucket:** `WegSegura`
 - **Storage Provider:** AWS

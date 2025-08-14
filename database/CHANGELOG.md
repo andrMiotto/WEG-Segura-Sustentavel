@@ -18,6 +18,8 @@ e este projeto adere ao [Versionamento Semântico](https://semver.org/lang/pt-BR
 ### Modificado
 - Atualizada documentação para usar InfluxDB Cloud em vez de Firebase
 - Adicionadas informações sobre hospedagem na AWS
+- Adicionadas credenciais de acesso ao InfluxDB Cloud (admin/admin123)
+- Incluído link direto para data explorer do InfluxDB Cloud
 
 ## [1.0.0] - 2024-12-XX
 

@@ -114,8 +114,115 @@ O sistema foi projetado para seguir integralmente a Lei Geral de Proteção de D
 
 # Autores 👤
 
-| <img loading="lazy" src="https://github.com/user-attachments/assets/c9277e3f-f8d7-4bdc-b351-fd665145d635" width="115"><br><sub><a href="https://github.com/Liiiiisssz">Elis Jasper</a><br><span style="color:#8A2BE2"></span></sub> | <img loading="lazy" src="https://github.com/user-attachments/assets/f1da660f-f2a2-40bd-a466-bad4d5351e6d" width="115"><br><sub><a href="https://github.com/Viihh-77">Gabrielli Vitória Glowatski</a><br><span style="color:#00BFFF"></span></sub> | <img loading="lazy" src="https://github.com/user-attachments/assets/9a812c36-e6c9-4009-a76b-20749d0a0a47" width="115"><br><sub><a href="https://github.com/Ana18022008">Ana Beatriz O. Ribeiro</a><br><span style="color:#32CD32"></span></sub> | <img loading="lazy" src="assets/README/CarlosEduardo.jpeg" width="115"><br><sub><a href="https://github.com">Carlos Eduardo Braga</a><br><span style="color:#32CD32"></span></sub> | <img loading="lazy" src="assets/README/catarina.jpg" width="115"><br><sub><a href="https://github.com/Catarina0830">Catarina</a><br><span style="color:#COLOR"></span></sub> | <img loading="lazy" src="assets/README/murilo.jpg" width="115"><br><sub><a href="https://github.com/Murilo2901">Murilo</a><br><span style="color:#COLOR"></span></sub> | <img loading="lazy" src="assets/README/lucas.jpg" width="115"><br><sub><a href="https://github.com/lucasschlei">Lucas</a><br><span style="color:#COLOR"></span></sub> | <img loading="lazy" src="assets/README/Yasmin.jpg" width="115"><br><sub><a href="https://github.com/min07775">Iasmin</a><br><span style="color:#COLOR"></span></sub> | <img loading="lazy" src="assets/README/jose.jpg" width="115"><br><sub><a href="https://github.com/Jose7764">José</a><br><span style="color:#COLOR"></span></sub> | <img loading="lazy" src="assets/README/daniel.jpg" width="115"><br><sub><a href="https://github.com/danielSismer">Daniel</a><br><span style="color:#COLOR"></span></sub> | <img loading="lazy" src="assets/README/eduardo.jpg" width="115"><br><sub><a href="https://github.com/EduardoDias1902">Eduardo</a><br><span style="color:#COLOR"></span></sub> | <img loading="lazy" src="assets/README/fagundes.jpg" width="115"><br><sub><a href="https://github.com/gabrielEFagundes">Gabriel</a><br><span style="color:#COLOR"></span></sub> |
-| :---: | :---: | :---: | :---: |
+<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
+
+  <div style="text-align: center; border: 2px solid #ccc; padding: 5px;">
+    <img loading="lazy" src="https://github.com/user-attachments/assets/9a812c36-e6c9-4009-a76b-20749d0a0a47" style="width:115px; height:115px; object-fit: cover;"><br>
+    <sub><a href="https://github.com/Ana18022008">Ana Beatriz O. Ribeiro</a></sub>
+  </div>
+
+  <div style="text-align: center; border: 2px solid #ccc; padding: 5px;">
+    <img loading="lazy" src="assets/README/andre.jpg" style="width:115px; height:115px; object-fit: cover;"><br>
+    <sub><a href="https://github.com/andrMiotto">André</a></sub>
+  </div>
+
+  <div style="text-align: center; border: 2px solid #ccc; padding: 5px;">
+    <img loading="lazy" src="assets/README/CarlosEduardo.jpeg" style="width:115px; height:115px; object-fit: cover;"><br>
+    <sub><a href="https://github.com">Carlos Eduardo Braga</a></sub>
+  </div>
+
+  <div style="text-align: center; border: 2px solid #ccc; padding: 5px;">
+    <img loading="lazy" src="assets/README/catarina.jpg" style="width:115px; height:115px; object-fit: cover;"><br>
+    <sub><a href="https://github.com/Catarina0830">Catarina</a></sub>
+  </div>
+
+  <div style="text-align: center; border: 2px solid #ccc; padding: 5px;">
+    <img loading="lazy" src="assets/README/daniel.jpg" style="width:115px; height:115px; object-fit: cover;"><br>
+    <sub><a href="https://github.com/danielSismer">Daniel</a></sub>
+  </div>
+
+  <div style="text-align: center; border: 2px solid #ccc; padding: 5px;">
+    <img loading="lazy" src="assets/README/eduardo.jpg" style="width:115px; height:115px; object-fit: cover;"><br>
+    <sub><a href="https://github.com/EduardoDias1902">Eduardo</a></sub>
+  </div>
+
+  <div style="text-align: center; border: 2px solid #ccc; padding: 5px;">
+    <img loading="lazy" src="https://github.com/user-attachments/assets/c9277e3f-f8d7-4bdc-b351-fd665145d635" style="width:115px; height:115px; object-fit: cover;"><br>
+    <sub><a href="https://github.com/Liiiiisssz">Elis Jasper</a></sub>
+  </div>
+
+ <div style="text-align: center; border: 2px solid #ccc; padding: 5px;">
+    <img loading="lazy" src="assets/README/emanuelle.jpg" style="width:115px; height:115px; object-fit: cover;"><br>
+    <sub><a href="https://github.com/manu-hostin">Emanuelle</a></sub>
+  </div>
+
+ <div style="text-align: center; border: 2px solid #ccc; padding: 5px;">
+    <img loading="lazy" src="assets/README/fagundes.jpg" style="width:115px; height:115px; object-fit: cover;"><br>
+    <sub><a href="https://github.com/gabrielEFagundes">Gabriel</a></sub>
+  </div>
+
+  <div style="text-align: center; border: 2px solid #ccc; padding: 5px;">
+    <img loading="lazy" src="https://github.com/user-attachments/assets/f1da660f-f2a2-40bd-a466-bad4d5351e6d" style="width:115px; height:115px; object-fit: cover;"><br>
+    <sub><a href="https://github.com/Viihh-77">Gabrielli Vitória Glowatski</a></sub>
+  </div>
+
+  <div style="text-align: center; border: 2px solid #ccc; padding: 5px;">
+    <img loading="lazy" src="assets/README/hugo.jpg" style="width:115px; height:115px; object-fit: cover;"><br>
+    <sub><a href="https://github.com/HugoDeleonP">Hugo</a></sub>
+  </div>
+
+  <div style="text-align: center; border: 2px solid #ccc; padding: 5px;">
+    <img loading="lazy" src="assets/README/Yasmin.jpg" style="width:115px; height:115px; object-fit: cover;"><br>
+    <sub><a href="https://github.com/min07775">Iasmin</a></sub>
+  </div>
+
+  <div style="text-align: center; border: 2px solid #ccc; padding: 5px;">
+    <img loading="lazy" src="assets/README/jose.jpg" style="width:115px; height:115px; object-fit: cover;"><br>
+    <sub><a href="https://github.com/Jose7764">José</a></sub>
+  </div>
+
+  <div style="text-align: center; border: 2px solid #ccc; padding: 5px;">
+    <img loading="lazy" src="assets/README/kael.jpg" style="width:115px; height:115px; object-fit: cover;"><br>
+    <sub><a href="https://github.com/KaelLuih">Kael</a></sub>
+  </div>
+
+  <div style="text-align: center; border: 2px solid #ccc; padding: 5px;">
+    <img loading="lazy" src="assets/README/kerolyn.jpg" style="width:115px; height:115px; object-fit: cover;"><br>
+    <sub><a href="https://github.com/kerolynpadilha">Kerolyn</a></sub>
+  </div>
+
+  <div style="text-align: center; border: 2px solid #ccc; padding: 5px;">
+    <img loading="lazy" src="assets/README/leandro.png" style="width:115px; height:115px; object-fit: cover;"><br>
+    <sub><a href="https://github.com/leandroFilipy">Leandro</a></sub>
+  </div>
+
+  <div style="text-align: center; border: 2px solid #ccc; padding: 5px;">
+    <img loading="lazy" src="assets/README/lucas.jpg" style="width:115px; height:115px; object-fit: cover;"><br>
+    <sub><a href="https://github.com/lucasschlei">Lucas</a></sub>
+  </div>
+
+  <div style="text-align: center; border: 2px solid #ccc; padding: 5px;">
+    <img loading="lazy" src="assets/README/maria.jpg" style="width:115px; height:115px; object-fit: cover;"><br>
+    <sub><a href="https://github.com/Dudazabel">Maria</a></sub>
+  </div>
+
+  <div style="text-align: center; border: 2px solid #ccc; padding: 5px;">
+    <img loading="lazy" src="" style="width:115px; height:115px; object-fit: cover;"><br>
+    <sub><a href="https://github.com/Matheus089107">Matheus</a></sub>
+  </div>
+
+  <div style="text-align: center; border: 2px solid #ccc; padding: 5px;">
+    <img loading="lazy" src="assets/README/Melissa.png" style="width:115px; height:115px; object-fit: cover;"><br>
+    <sub><a href="https://github.com/melll1601">Melissa</a></sub>
+  </div>
+
+  <div style="text-align: center; border: 2px solid #ccc; padding: 5px;">
+    <img loading="lazy" src="assets/README/murilo.jpg" style="width:115px; height:115px; object-fit: cover;"><br>
+    <sub><a href="https://github.com/Murilo2901">Murilo</a></sub>
+  </div>
+
+</div>
+
 
  
 

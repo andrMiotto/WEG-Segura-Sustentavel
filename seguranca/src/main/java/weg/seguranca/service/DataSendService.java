@@ -1,4 +1,4 @@
 package weg.seguranca.service;
 
-public class AlarmService {
+public class DataSendService {
 }

@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEG Segura Sustentável - Dashboard</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/style.css">
+
+</head>
+
+<body>
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <a href="#" class="sidebar-brand">
+                <i class="bi bi-shield-check"></i>
+                WEG SEGURA SUSTENTÁVEL
+            </a>
+        </div>
+
+        <div class="sidebar-nav">
+            <div class="nav-section">
+                <div class="nav-item">
+                    <a href="#" class="nav-link active">
+                        <i class="bi bi-speedometer2"></i>
+                        Dashboard
+                    </a>
+                </div>
+            </div>
+
+            
+        </div>
+    </nav>
+
+    <div class="main-content">
+        <header class="header">
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Search for...">
+                <button class="search-btn">
+                    <i class="bi bi-search"></i>
+                </button>
+            </div>
+
+            <div class="header-right">
+                <div class="notification-icon">
+                    <i class="bi bi-bell"></i>
+                    <span class="notification-badge">1+</span>
+                </div>
+
+                <div class="notification-icon">
+                    <i class="bi bi-envelope"></i>
+                </div>
+
+                <div class="user-info">
+                    <span>Nome Usuario</span>
+                    <div class="user-avatar">
+                        <i class="bi bi-person"></i>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="dashboard-content">
+            <div class="dashboard-header">
+                <h1 class="dashboard-title">Dashboard</h1>
+                <button class="report-btn">
+                    <i class="bi bi-download"></i>
+                    Gerar Relatório
+                </button>
+            </div>
+
+            <div class="stats-cards">
+                <div class="stat-card">
+                    <div class="stat-title">SALA 210</div>
+                    <div class="stat-value">28</div>
+                    <i class="bi bi-people stat-icon"></i>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-title">SALA 211</div>
+                    <div class="stat-value">32</div>
+                    <i class="bi bi-people stat-icon"></i>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-title">SALA 212</div>
+                    <div class="stat-value">25</div>
+                    <i class="bi bi-people stat-icon"></i>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-title">SALA 213</div>
+                    <div class="stat-value">30</div>
+                    <i class="bi bi-people stat-icon"></i>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title mb-0">Status das Salas</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="row text-center">
+                                <div class="col-md-3">
+                                    <div class="border rounded p-3">
+                                        <i class="bi bi-check-circle text-success" style="font-size: 2rem;"></i>
+                                        <h6 class="mt-2">Ocupadas</h6>
+                                        <h4 class="text-success">4</h4>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="border rounded p-3">
+                                        <i class="bi bi-x-circle text-danger" style="font-size: 2rem;"></i>
+                                        <h6 class="mt-2">Vazias</h6>
+                                        <h4 class="text-danger">0</h4>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="border rounded p-3">
+                                        <i class="bi bi-exclamation-circle text-warning" style="font-size: 2rem;"></i>
+                                        <h6 class="mt-2">Manutenção</h6>
+                                        <h4 class="text-warning">0</h4>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="border rounded p-3">
+                                        <i class="bi bi-clock text-info" style="font-size: 2rem;"></i>
+                                        <h6 class="mt-2">Total Alunos</h6>
+                                        <h4 class="text-info">115</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title mb-0">Alertas das Salas</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="bg-danger rounded-circle me-3" style="width: 10px; height: 10px;"></div>
+                                <div>
+                                    <small class="text-muted">2 min atrás</small>
+                                    <p class="mb-0">Sala 210 - Capacidade máxima atingida</p>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="bg-warning rounded-circle me-3" style="width: 10px; height: 10px;"></div>
+                                <div>
+                                    <small class="text-muted">15 min atrás</small>
+                                    <p class="mb-0">Sala 213 - Temperatura elevada</p>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <div class="bg-info rounded-circle me-3" style="width: 10px; height: 10px;"></div>
+                                <div>
+                                    <small class="text-muted">1 hora atrás</small>
+                                    <p class="mb-0">Sala 212 - Limpeza programada</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Dados das salas
+        const salasData = {
+            'SALA 210': { alunos: 28, capacidade: 30, status: 'ocupada', professor: 'Prof. Silva' },
+            'SALA 211': { alunos: 32, capacidade: 35, status: 'ocupada', professor: 'Prof. Santos' },
+            'SALA 212': { alunos: 25, capacidade: 30, status: 'ocupada', professor: 'Prof. Costa' },
+            'SALA 213': { alunos: 30, capacidade: 32, status: 'ocupada', professor: 'Prof. Oliveira' }
+        };
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Make cards clickable with detailed information
+            const statCards = document.querySelectorAll('.stat-card');
+            statCards.forEach(card => {
+                card.style.cursor = 'pointer';
+                card.addEventListener('click', function () {
+                    const salaTitle = this.querySelector('.stat-title').textContent;
+                    const salaData = salasData[salaTitle];
+
+                    if (salaData) {
+                        const modal = `
+                             <div class="modal fade" id="salaModal" tabindex="-1">
+                                 <div class="modal-dialog">
+                                     <div class="modal-content">
+                                         <div class="modal-header">
+                                             <h5 class="modal-title">${salaTitle}</h5>
+                                             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                         </div>
+                                         <div class="modal-body">
+                                             <div class="row">
+                                                 <div class="col-6">
+                                                     <p><strong>Alunos:</strong> ${salaData.alunos}</p>
+                                                     <p><strong>Capacidade:</strong> ${salaData.capacidade}</p>
+                                                 </div>
+                                                 <div class="col-6">
+                                                     <p><strong>Status:</strong> <span class="badge bg-success">${salaData.status}</span></p>
+                                                     <p><strong>Professor:</strong> ${salaData.professor}</p>
+                                                 </div>
+                                             </div>
+                                             <div class="progress mt-3">
+                                                 <div class="progress-bar" style="width: ${(salaData.alunos / salaData.capacidade) * 100}%">
+                                                     ${Math.round((salaData.alunos / salaData.capacidade) * 100)}%
+                                                 </div>
+                                             </div>
+                                         </div>
+                                     </div>
+                                 </div>
+                             </div>
+                         `;
+
+                        // Remove existing modal if any
+                        const existingModal = document.getElementById('salaModal');
+                        if (existingModal) {
+                            existingModal.remove();
+                        }
+
+                        // Add new modal
+                        document.body.insertAdjacentHTML('beforeend', modal);
+
+                        // Show modal
+                        const modalElement = new bootstrap.Modal(document.getElementById('salaModal'));
+                        modalElement.show();
+                    }
+
+                    // Animation effect
+                    this.style.transform = 'scale(1.02)';
+                    setTimeout(() => {
+                        this.style.transform = 'scale(1)';
+                    }, 200);
+                });
+            });
+
+            // Search functionality with real filtering
+            const searchInput = document.querySelector('.search-input');
+            const searchBtn = document.querySelector('.search-btn');
+
+            searchBtn.addEventListener('click', function () {
+                const searchTerm = searchInput.value.toLowerCase().trim();
+                if (searchTerm) {
+                    const matchingSalas = Object.keys(salasData).filter(sala =>
+                        sala.toLowerCase().includes(searchTerm) ||
+                        salasData[sala].professor.toLowerCase().includes(searchTerm)
+                    );
+
+                    if (matchingSalas.length > 0) {
+                        const results = matchingSalas.map(sala =>
+                            `${sala}: ${salasData[sala].alunos} alunos (${salasData[sala].professor})`
+                        ).join('\n');
+                        alert(`Resultados da busca:\n\n${results}`);
+                    } else {
+                        alert('Nenhuma sala encontrada com esse termo.');
+                    }
+                } else {
+                    alert('Digite um termo para pesquisar.');
+                }
+            });
+
+            // Enter key for search
+            searchInput.addEventListener('keypress', function (e) {
+                if (e.key === 'Enter') {
+                    searchBtn.click();
+                }
+            });
+
+            // Report button with real data
+            const reportBtn = document.querySelector('.report-btn');
+            reportBtn.addEventListener('click', function () {
+                const totalAlunos = Object.values(salasData).reduce((sum, sala) => sum + sala.alunos, 0);
+                const totalCapacidade = Object.values(salasData).reduce((sum, sala) => sum + sala.capacidade, 0);
+                const ocupacaoMedia = Math.round((totalAlunos / totalCapacidade) * 100);
+
+                const report = `
+RELATÓRIO DE OCUPAÇÃO DAS SALAS
+Data: ${new Date().toLocaleDateString('pt-BR')}
+
+RESUMO:
+- Total de Salas: 4
+- Total de Alunos: ${totalAlunos}
+- Capacidade Total: ${totalCapacidade}
+- Ocupação Média: ${ocupacaoMedia}%
+
+DETALHES POR SALA:
+${Object.entries(salasData).map(([sala, data]) =>
+                    `${sala}: ${data.alunos}/${data.capacidade} alunos (${Math.round((data.alunos / data.capacidade) * 100)}%) - ${data.professor}`
+                ).join('\n')}
+                 `;
+
+                // Create and download report
+                const blob = new Blob([report], { type: 'text/plain' });
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `relatorio_salas_${new Date().toISOString().split('T')[0]}.txt`;
+                a.click();
+                window.URL.revokeObjectURL(url);
+
+                alert('Relatório gerado e baixado com sucesso!');
+            });
+
+            // Real-time updates simulation
+            setInterval(() => {
+                // Simulate small changes in student count
+                Object.keys(salasData).forEach(sala => {
+                    if (Math.random() < 0.1) { // 10% chance of change
+                        const change = Math.random() < 0.5 ? 1 : -1;
+                        const newCount = Math.max(0, Math.min(salasData[sala].capacidade, salasData[sala].alunos + change));
+                        salasData[sala].alunos = newCount;
+
+                        // Update the card display
+                        const card = Array.from(statCards).find(card =>
+                            card.querySelector('.stat-title').textContent === sala
+                        );
+                        if (card) {
+                            card.querySelector('.stat-value').textContent = newCount;
+                        }
+                    }
+                });
+            }, 30000); // Update every 30 seconds
+        });
+    </script>
+</body>
+
+</html>

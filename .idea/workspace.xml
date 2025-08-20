@@ -5,31 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c3d3031e-c2d4-463d-a304-4b54e8a45413" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seguranca.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/config/MqttConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/config/SecurityConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/config/SwaggerConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/controller/AlarmController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/controller/DeviceController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/controller/SensorController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/dto/AlarmDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/dto/DeviceDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/dto/SensorDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/exception/CustomExceptionHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/exception/DeviceNotFoundException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/exception/InvalidSensorDataException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/model/Alarm.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/model/Device.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/model/Sensor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/repository/AlarmRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/repository/DeviceRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/repository/SensorRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/service/AlarmService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/service/DeviceService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/service/MqttService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/service/SensorService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/controller/DataController.java" beforeDir="false" afterPath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/controller/DataController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/repository/MySQLRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/repository/MySQLRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/repository/NoSQLRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/repository/NoSQLRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/service/DataReceiveService.java" beforeDir="false" afterPath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/service/DataReceiveService.java" afterDir="false" />
+    </list>
+    <list id="f57c5912-fa97-42e0-bcab-e672cd5a0ffd" name="Changes by gabriel_e_fagundes" comment="">
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    </list>
+    <list id="ffc2405f-14d6-46c2-b304-9eca90494eb2" name="Changes by leandro_f_lima" comment="">
+      <change beforePath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/service/DataSendService.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,6 +55,8 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.MySQLRepository.executor": "Run",
+    "Application.NoSQLRepository.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
@@ -83,8 +71,31 @@
       <recent name="weg.seguranca.service" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\daniel_sismer\IdeaProjects\WEG-Segura-Sustentavel\seguranca\src\main\resources" />
+      <recent name="C:\Users\daniel_sismer\IdeaProjects\WEG-Segura-Sustentavel\seguranca\src\main\resources\templates\static" />
+      <recent name="C:\Users\daniel_sismer\IdeaProjects\WEG-Segura-Sustentavel\seguranca\src\main\resources\templates" />
       <recent name="C:\Users\daniel_sismer\IdeaProjects\weg-securi" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="NoSQLRepository" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="weg.seguranca.repository.NoSQLRepository" />
+      <module name="seguranca" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="weg.seguranca.repository.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.NoSQLRepository" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

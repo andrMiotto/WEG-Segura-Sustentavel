@@ -5,31 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c3d3031e-c2d4-463d-a304-4b54e8a45413" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seguranca.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/dto/EmergenciaDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/dto/PessoaDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/dto/SalaDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/dto/Sala_emergenciaDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/mapper/EmergenciaMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/mapper/PessoaMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/mapper/SalaMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/mapper/Sala_emergenciaMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/model/Pessoa.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/model/Sala.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/model/Sala_emergencia.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/config/MqttConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/config/SecurityConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/config/SwaggerConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/controller/AlarmController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/controller/DeviceController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/controller/SensorController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/dto/AlarmDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/dto/DeviceDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/dto/SensorDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/exception/CustomExceptionHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/exception/DeviceNotFoundException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/exception/InvalidSensorDataException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/model/Alarm.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/model/Device.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/model/Sensor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/repository/AlarmRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/repository/DeviceRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/repository/SensorRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/service/AlarmService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/service/DeviceService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/service/MqttService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/service/SensorService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/model/DataModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/model/Emergencia.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,17 +55,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/elis_jasper/IdeaProjects/WEG-Segura-Sustentavel/assets/README",
-    "onboarding.tips.debug.path": "C:/Users/daniel_sismer/IdeaProjects/weg-securi/src/main/java/org/example/Main.java"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/elis_jasper/IdeaProjects/WEG-Segura-Sustentavel/assets/README&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/daniel_sismer/IdeaProjects/weg-securi/src/main/java/org/example/Main.java&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="weg.seguranca.service" />

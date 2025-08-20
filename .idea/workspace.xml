@@ -5,6 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c3d3031e-c2d4-463d-a304-4b54e8a45413" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/rfid/LeituraRFIDRepetida.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/rfid/RFIDmonitor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/controller/DataController.java" beforeDir="false" afterPath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/controller/DataController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/repository/MySQLRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/repository/MySQLRepository.java" afterDir="false" />
@@ -16,7 +18,9 @@
     </list>
     <list id="ffc2405f-14d6-46c2-b304-9eca90494eb2" name="Changes by leandro_f_lima" comment="">
       <change beforePath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/service/DataSendService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/exception/CustomExeption.java" beforeDir="false" afterPath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/exception/CustomExeption.java" afterDir="false" />
     </list>
+    <list id="e059e1d5-543b-47ee-b8e5-132388b35d17" name="Changes by maria_e_zabel" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -53,6 +57,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/elis_jasper/IdeaProjects/WEG-Segura-Sustentavel/assets/README&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/daniel_sismer/IdeaProjects/weg-securi/src/main/java/org/example/Main.java&quot;
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.MySQLRepository.executor": "Run",
@@ -65,7 +78,7 @@
     "last_opened_file_path": "C:/Users/elis_jasper/IdeaProjects/WEG-Segura-Sustentavel/assets/README",
     "onboarding.tips.debug.path": "C:/Users/daniel_sismer/IdeaProjects/weg-securi/src/main/java/org/example/Main.java"
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="weg.seguranca.service" />

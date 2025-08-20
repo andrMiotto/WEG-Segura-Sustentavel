@@ -1,4 +1,4 @@
 package weg.seguranca.service;
 
-public class SensorService {
+public class DataReceiveService {
 }

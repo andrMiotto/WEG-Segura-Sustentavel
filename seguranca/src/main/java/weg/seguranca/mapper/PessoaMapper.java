@@ -1,7 +1,7 @@
 package weg.seguranca.mapper;
 
 import weg.seguranca.model.Pessoa;
-import  weg.seguranca.dto.PessoaDTO;
+import weg.seguranca.dto.PessoaDTO;
 
 public class PessoaMapper {
 

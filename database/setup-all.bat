@@ -12,34 +12,21 @@ if %errorlevel% neq 0 (
 
 REM Para e remove containers existentes se houver
 echo 🔄 Parando containers existentes...
-docker stop weg-segura-mysql weg-segura-influxdb weg-segura-phpmyadmin >nul 2>&1
-docker rm weg-segura-mysql weg-segura-influxdb weg-segura-phpmyadmin >nul 2>&1
+docker stop weg-segura-influxdb >nul 2>&1
+docker rm weg-segura-influxdb >nul 2>&1
 
-REM Inicia todos os serviços
-echo 🐳 Iniciando todos os serviços...
-docker-compose up -d
+REM Inicia somente serviços necessários (InfluxDB continua local, MySQL já está na Clever Cloud)
+echo 🐳 Iniciando InfluxDB...
+docker-compose up -d weg-segura-influxdb
 
-REM Aguarda os serviços estarem prontos
-echo ⏳ Aguardando serviços inicializarem...
-echo    MySQL: 30 segundos...
-timeout /t 30 /nobreak >nul
-echo    InfluxDB: 10 segundos...
+REM Aguarda serviços estarem prontos
+echo ⏳ Aguardando inicializacao do InfluxDB...
 timeout /t 10 /nobreak >nul
 
-REM Verifica se todos estão rodando
+REM Verifica se InfluxDB está rodando
 echo 🔍 Verificando status dos serviços...
 
-set mysql_running=false
 set influxdb_running=false
-set phpmyadmin_running=false
-
-docker ps | findstr "weg-segura-mysql" >nul
-if %errorlevel% equ 0 (
-    set mysql_running=true
-    echo ✅ MySQL: Rodando
-) else (
-    echo ❌ MySQL: Parado
-)
 
 docker ps | findstr "weg-segura-influxdb" >nul
 if %errorlevel% equ 0 (
@@ -49,36 +36,25 @@ if %errorlevel% equ 0 (
     echo ❌ InfluxDB: Parado
 )
 
-docker ps | findstr "weg-segura-phpmyadmin" >nul
-if %errorlevel% equ 0 (
-    set phpmyadmin_running=true
-    echo ✅ phpMyAdmin: Rodando
-) else (
-    echo ❌ phpMyAdmin: Parado
-)
-
 echo.
 echo 📊 RESUMO DA CONFIGURAÇÃO
 echo =========================
 
-if "%mysql_running%"=="true" (
-    echo 🗄️  MySQL:
-    echo    Host: localhost
-    echo    Porta: 3306
-    echo    Usuário: weg_user
-    echo    Senha: wegsegura123
-    echo    Banco: weg_segura
-    echo    phpMyAdmin: http://localhost:8080
-    echo.
-)
+echo 🗄️  MySQL (Clever Cloud):
+echo    Host: bmjbvsmlzkvrphhok83p-mysql.services.clever-cloud.com
+echo    Porta: 3306
+echo    Usuario: u0np3s8gbvzfctph
+echo    Senha: zXUOwzICMsDyvmzTVVqV
+echo    Banco: bmjbvsmlzkvrphhok83p
+echo    Conexao: Weg Segura
+echo.
 
 if "%influxdb_running%"=="true" (
     echo 📈 InfluxDB:
-    echo    URL: http://localhost:8086
-    echo    Usuário: admin
-    echo    Senha: wegsegura123
-    echo    Organização: WegSegura
+    echo    URL: http://192.168.56.1:8086
+    echo    Organizacao: Weg
     echo    Bucket: WegSegura
+    echo    Token: EnMZnSwm08sptanEmlbWavHASmtDEmYHepuRJzezGARphMo6kM1vMGF_SyLbq1VFSNPs8G13BDyXIXkXpOYE1A==
     echo.
 )
 
@@ -88,12 +64,12 @@ echo    Ver logs: docker-compose logs -f
 echo    Reiniciar: docker-compose restart
 echo.
 
-if "%mysql_running%"=="true" if "%influxdb_running%"=="true" (
-    echo 🎉 Todos os serviços estão rodando com sucesso!
-    echo    Acesse http://localhost:8080 para gerenciar o MySQL
-    echo    Acesse http://localhost:8086 para gerenciar o InfluxDB
+if "%influxdb_running%"=="true" (
+    echo 🎉 InfluxDB rodando local e MySQL configurado na Clever Cloud!
+    echo    MySQL: bmjbvsmlzkvrphhok83p-mysql.services.clever-cloud.com:3306
+    echo    InfluxDB: http://192.168.56.1:8086
 ) else (
-    echo ⚠️  Alguns serviços não estão rodando. Verifique os logs:
+    echo ⚠️  InfluxDB nao iniciou. Verifique os logs:
     echo    docker-compose logs
 )
 

@@ -8,9 +8,9 @@ import com.influxdb.client.write.Point;
 
 public class InfluxDBInsercao {
 
-    private static final String url = "http://localhost:8086";
-    private static final char[] token = "nU8725HIFJQYxLu0dbOKyVuNjQfrBaZf0bSi6pakaVNkG3BbygOEzSjtTRJ9sZ1JtdHfCZ9YXRPlWCbIQgHr0g==".toCharArray();
-    private static final String org = "WegSegura";
+    private static final String url = "http://192.168.56.1:8086";
+    private static final char[] token = "EnMZnSwm08sptanEmlbWavHASmtDEmYHepuRJzezGARphMo6kM1vMGF_SyLbq1VFSNPs8G13BDyXIXkXpOYE1A==".toCharArray();
+    private static final String org = "Weg";
     private static final String bucket = "WegSegura";
 
     public static void main(String[] args) {
@@ -33,7 +33,7 @@ public class InfluxDBInsercao {
 
             Point ponto3 = Point.measurement("logs_sensores")
                     .addTag("sala", "3")
-                    .addTag("pessoa", "15")
+                    .addTag("pessoa", "13")
                     .addField("ha_movimento_na_sala", true)
                     .time(System.currentTimeMillis(), WritePrecision.MS);
 

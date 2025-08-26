@@ -1,3 +1,8 @@
+
+<p align="center">
+  <img src="assets/README/logo-wegsegura.png" alt="Logo da WEG + SEGURA" width="300">
+</p>
+
 # WEG + Segura – MIDS 77🔒🌱
 
 👩‍💻 Desenvolvido pela turma: Aprendizagem Industrial em Desenvolvimento de Sistemas - WEG - AI MIDS 77
@@ -18,7 +23,7 @@ O projeto permite controle em tempo real, emissão de relatórios automáticos e
 
 <table border="1" cellpadding="10" cellspacing="0">
     <tbody>
-                <tr>
+        <tr>
             <td>Controle de entrada/saída por RFID</td>
             <td>📥</td>
         </tr>
@@ -76,8 +81,22 @@ O projeto permite controle em tempo real, emissão de relatórios automáticos e
 
 # Como foi Desenvolvido 🤔
 
+Para o desenvolvimento do projeto, a turma foi organizada em áreas de interesse, de acordo com o que cada integrante mais gostava de estudar e praticar. Dessa forma, todos puderam contribuir com suas habilidades:
 
 
+Front-End 🎨: Responsáveis pela interface do usuário, cuidando do design, usabilidade e interação visual do sistema.
+
+
+Back-End ⚙️: Cuidaram da lógica de funcionamento do sistema, das regras de negócio e da integração com os outros módulos.
+
+
+Banco de Dados 💾: Garantiram a estruturação, armazenamento e segurança das informações, além de otimizar consultas e integrações.
+
+
+IoT (Internet das Coisas) 📡: Trabalharam na comunicação entre dispositivos e sistemas inteligentes, garantindo conectividade e automação.
+
+
+Eletrônica 🔌: Montaram e ajustaram os circuitos, sensores e componentes necessários para o funcionamento físico do projeto.
 
 
 # Conformidade com a LGPD 🔐

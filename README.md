@@ -1,15 +1,17 @@
 
 <p align="center">
-  <img src="assets/README/logo-wegsegura.png" alt="Logo da WEG + SEGURA" width="300">
+  <img src="assets/README/logo-wegsegura.png" alt="Logo da WEG + SEGURA" width="400">
 </p>
-
-# WEG + Segura – MIDS 77🔒🌱
-
+<h1 align="center">
+WEG + Segura – MIDS 77🔒🌱
+</h1>
+  
+<p align="center">
 👩‍💻 Desenvolvido pela turma: Aprendizagem Industrial em Desenvolvimento de Sistemas - WEG - AI MIDS 77
-
-<p align="left">
-<img loading="lazy" src="http://img.shields.io/static/v1?label=STATUS&message=EM-DESENVOLVIMENTO&color=GREEN&style=for-the-badge"/>
 </p>
+
+<p align="center">
+<img loading="lazy" src="http://img.shields.io/static/v1?label=STATUS&message=EM-DESENVOLVIMENTO&color=GREEN&style=for-the-badge"/>
 
 # Objetivos 📝
 
@@ -65,19 +67,23 @@ O projeto permite controle em tempo real, emissão de relatórios automáticos e
 
 # Tecnologias Utilizadas 👾
 
-<p align="left">
-    <img alt="Node-RED" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodered/nodered-original.svg" width="40" height="40" hspace="15" />
-    <img alt="JPA / Hibernate" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/hibernate/hibernate-original.svg" width="40" height="40" hspace="15" />
-    <img alt="Spring Boot" src="assets/README/springboot.png" width="80" height="80" hspace="15" />
-    <img alt="Jira" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg" width="40" height="40" hspace="15" />
-    <img alt="HTML5" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" width="40" height="40" hspace="15" />
-    <img alt="CSS3" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" width="40" height="40" hspace="15" />
-    <img alt="Java" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" width="40" height="40" hspace="15" />
-    <img alt="C++" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" width="40" height="40" hspace="15" />
-    <img alt="ESP32" src="assets/README/esp32.png" width="40" height="40" hspace="15" />
-    <img alt="MySQL Workbench" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" width="40" height="40" hspace="15" />
-    <img alt="WEGnology" src="assets/README/wegnology.jpg" width="80" height="150" hspace="15" />
-</p>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 15px;">
+    <img alt="Node-RED" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodered/nodered-original.svg" width="40" height="40" />
+    <img alt="JPA / Hibernate" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/hibernate/hibernate-original.svg" width="40" height="40" />
+    <img alt="Spring Boot" src="assets/README/springboot.png" width="80" height="80" />
+    <img alt="Jira" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg" width="40" height="40" />
+    <img alt="HTML5" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" width="40" height="40" />
+    <img alt="CSS3" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" width="40" height="40" />
+    <img alt="Java" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" width="40" height="40" />
+    <img alt="C++" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" width="40" height="40" />
+    <img alt="ESP32" src="assets/README/esp32.png" width="40" height="40" />
+    <img alt="MySQL Workbench" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" width="40" height="40" />
+    <img alt="WEGnology" src="assets/README/wegnology.jpg" width="80" height="150" />
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/influxdb/influxdb-original.svg" width="40" height="40" />
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dbeaver/dbeaver-original.svg" width="40" height="40" />
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" width="40" height="40" />
+</div>
+
 
 # Como foi Desenvolvido 🤔
 
@@ -137,6 +143,7 @@ O sistema foi projetado para seguir integralmente a Lei Geral de Proteção de D
 
 
  
+
 
 
 

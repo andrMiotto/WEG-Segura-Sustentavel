@@ -12,8 +12,8 @@ public class PessoaMapper {
                 dto.getCadastro(),
                 dto.getTipo(),
                 dto.getSituacaoDeRisco(),
-                dto.getIdSalaAtual(),
-                dto.getIdEmergenciaAtual()
+                dto.getSalaAtual(),
+                dto.getEmergenciaAtual()
         );
     }
 
@@ -23,8 +23,8 @@ public class PessoaMapper {
                 model.getCadastro(),
                 model.getTipo(),
                 model.getSituacaoDeRisco(),
-                model.getIdSalaAtual(),
-                model.getIdEmergenciaAtual()
+                model.getSalaAtual(),
+                model.getEmergenciaAtual()
         );
     }
 }

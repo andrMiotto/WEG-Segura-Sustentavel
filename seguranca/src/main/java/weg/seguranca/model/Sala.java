@@ -14,18 +14,18 @@ public class Sala {
     private Integer portaria;
     private String unidade;
     private Boolean situacaoDeRisco;
-    private Integer idEmergenciaAtual;
+    private Emergencia emergenciaAtual;
 
     public Sala() {}
 
-    public Sala(Integer id, Integer numero, String bloco, Integer portaria, String unidade, Boolean situacaoDeRisco, Integer idEmergenciaAtual) {
+    public Sala(Integer id, Integer numero, String bloco, Integer portaria, String unidade, Boolean situacaoDeRisco, Emergencia emergenciaAtual) {
         this.id = id;
         this.numero = numero;
         this.bloco = bloco;
         this.portaria = portaria;
         this.unidade = unidade;
         this.situacaoDeRisco = situacaoDeRisco;
-        this.idEmergenciaAtual = idEmergenciaAtual;
+        this.emergenciaAtual = emergenciaAtual;
     }
 
     // Getters e Setters
@@ -47,6 +47,6 @@ public class Sala {
     public Boolean getSituacaoDeRisco() { return situacaoDeRisco; }
     public void setSituacaoDeRisco(Boolean situacaoDeRisco) { this.situacaoDeRisco = situacaoDeRisco; }
 
-    public Integer getIdEmergenciaAtual() { return idEmergenciaAtual; }
-    public void setIdEmergenciaAtual(Integer idEmergenciaAtual) { this.idEmergenciaAtual = idEmergenciaAtual; }
+    public Emergencia getEmergenciaAtual() { return emergenciaAtual; }
+    public void setEmergenciaAtual(Emergencia emergenciaAtual) { this.emergenciaAtual = emergenciaAtual; }
 }

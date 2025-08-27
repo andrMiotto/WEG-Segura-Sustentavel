@@ -9,24 +9,24 @@ public class Sala_emergencia {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private int id;
-    private int salaId;
-    private int emergenciaId;
+    private Sala sala;
+    private Emergencia emergencia;
 
     public Sala_emergencia() {
     }
 
-    public Sala_emergencia(Integer id, Integer salaId, Integer emergenciaId) {
+    public Sala_emergencia(Integer id, Sala sala, Emergencia emergencia) {
         this.id = id;
-        this.salaId = salaId;
-        this.emergenciaId = emergenciaId;
+        this.sala = sala;
+        this.emergencia = emergencia;
     }
 
     public Integer getId() { return id; }
     public void setId(Integer id) { this.id = id; }
 
-    public Integer getSalaId(){return salaId;}
-    public void setSalaId(Integer salaId){this.salaId = salaId;}
+    public Sala getSala(){return sala;}
+    public void setSalaId(Sala salaId){this.sala = sala;}
 
-    public Integer getEmergenciaId(){return emergenciaId;}
-    public void setEmergenciaId(Integer emergenciaId){this.emergenciaId = emergenciaId;}
+    public Emergencia getEmergencia(){return emergencia;}
+    public void setEmergenciaId(Emergencia emergenciaId){this.emergencia = emergencia;}
 }

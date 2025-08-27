@@ -10,6 +10,8 @@ public class Sala_emergencia {
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private int id;
     private Sala sala;
+
+    @OneToMany
     private Emergencia emergencia;
 
     public Sala_emergencia() {

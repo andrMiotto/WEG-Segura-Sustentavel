@@ -14,6 +14,8 @@ public class Sala {
     private Integer portaria;
     private String unidade;
     private Boolean situacaoDeRisco;
+
+    @OneToMany
     private Emergencia emergenciaAtual;
 
     public Sala() {}

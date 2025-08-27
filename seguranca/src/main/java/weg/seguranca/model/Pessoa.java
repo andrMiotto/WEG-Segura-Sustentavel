@@ -13,7 +13,11 @@ public class Pessoa {
     private Integer cadastro;
     private String tipo;
     private Boolean situacaoDeRisco;
+
+    @OneToMany
     private Sala salaAtual;
+
+    @OneToMany
     private Emergencia emergenciaAtual;
 
     public Pessoa() {}

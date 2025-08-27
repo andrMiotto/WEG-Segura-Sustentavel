@@ -2,13 +2,11 @@
 #include <PubSubClient.h>
 #include <SPI.h>
 #include <MFRC522.h>
-#include <Wire.h>
-#include "RTClib.h"
 #include "DHT.h"
 
 // --- DHT ---
-#define DHTPIN 25       // Pino do DHT
-#define DHTTYPE DHT22   // Tipo do sensor (DHT11 ou DHT22)
+#define DHTPIN 25       
+#define DHTTYPE DHT22   
 DHT dht(DHTPIN, DHTTYPE);
 
 // --- RFID ---
@@ -17,19 +15,21 @@ DHT dht(DHTPIN, DHTTYPE);
 MFRC522 mfrc522(SS_PIN, RST_PIN);  
 // (SCK=18, MOSI=23, MISO=19)
 
-// --- RTC ---
-RTC_DS3231 rtc;
+// --- LEDS e buzzer ---
+#define LED_VERMELHO 15
+#define LED_VERDE    2
+#define BUZZER_PIN   26
 
-// --- LED e buzzer ---
-#define LED_PIN     12
-#define BUZZER_PIN  26   // Ajustado para D26
+// --- Ultrassônico ---
+#define TRIG_PIN 12
+#define ECHO_PIN 13
 
 // --- WiFi ---
-const char* ssid = "SEU_WIFI";
-const char* password = "SUA_SENHA";
+const char* ssid = "Edu";
+const char* password = "Eduardo1902";
 
-// --- MQTT (Node-RED) ---
-const char* mqtt_server = "192.168.1.100";  // IP do broker (Node-RED/Mosquitto)
+// --- MQTT (HiveMQ público) ---
+const char* mqtt_server = "broker.hivemq.com";
 WiFiClient espClient;
 PubSubClient client(espClient);
 
@@ -43,6 +43,8 @@ struct Usuario {
 Usuario usuarios[50];
 int totalUsuarios = 0;
 
+// ---------------------------- Funções ----------------------------
+
 void setup_wifi() {
   delay(10);
   Serial.println("Conectando ao WiFi...");
@@ -52,6 +54,11 @@ void setup_wifi() {
     Serial.print(".");
   }
   Serial.println("\nWiFi conectado");
+
+  // Configura NTP (fuso horário do Brasil: GMT-3)
+  configTime(-3 * 3600, 0, "pool.ntp.org", "time.nist.gov");
+  Serial.println("Sincronizando horário via NTP...");
+  delay(2000);
 }
 
 void reconnect() {
@@ -85,24 +92,41 @@ int buscarUsuario(String uid) {
   return -1;
 }
 
+long medirDistancia() {
+  digitalWrite(TRIG_PIN, LOW);
+  delayMicroseconds(2);
+  digitalWrite(TRIG_PIN, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(TRIG_PIN, LOW);
+
+  long duracao = pulseIn(ECHO_PIN, HIGH, 30000); // timeout 30ms
+  long distancia = duracao * 0.034 / 2; // cm
+  return distancia;
+}
+
+String getHoraAtual() {
+  struct tm timeinfo;
+  if (!getLocalTime(&timeinfo)) {
+    return "00:00:00";
+  }
+  char buffer[10];
+  sprintf(buffer, "%02d:%02d:%02d", timeinfo.tm_hour, timeinfo.tm_min, timeinfo.tm_sec);
+  return String(buffer);
+}
+
+// ---------------------------- Setup ----------------------------
 void setup() {
   Serial.begin(115200);
 
-  pinMode(LED_PIN, OUTPUT);
+  pinMode(LED_VERMELHO, OUTPUT);
+  pinMode(LED_VERDE, OUTPUT);
   pinMode(BUZZER_PIN, OUTPUT);
+  pinMode(TRIG_PIN, OUTPUT);
+  pinMode(ECHO_PIN, INPUT);
 
   // Inicializa SPI e RFID
-  SPI.begin(18, 19, 23);  // SCK=18, MISO=19, MOSI=23
+  SPI.begin(18, 19, 23);  
   mfrc522.PCD_Init();
-
-  // RTC
-  if (!rtc.begin()) {
-    Serial.println("Não foi possível encontrar o RTC");
-    while (1);
-  }
-  if (rtc.lostPower()) {
-    rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
-  }
 
   // DHT
   dht.begin();
@@ -111,20 +135,35 @@ void setup() {
   setup_wifi();
   client.setServer(mqtt_server, 1883);
 
-  Serial.println("Sistema de Contagem RFID + DHT com MQTT iniciado.");
+  Serial.println("Sistema de Contagem RFID + DHT + Ultrassom com MQTT iniciado.");
 }
 
+// ---------------------------- Loop ----------------------------
 void loop() {
   if (!client.connected()) {
     reconnect();
   }
   client.loop();
 
+  // Leitura ultrassônico
+  long distancia = medirDistancia();
+  if (distancia > 0 && distancia < 100) {
+    Serial.print("Distância detectada: ");
+    Serial.print(distancia);
+    Serial.println(" cm");
+
+    // Aciona buzzer por 1s quando detecta movimento
+    digitalWrite(BUZZER_PIN, HIGH);
+    delay(1000);
+    digitalWrite(BUZZER_PIN, LOW);
+  }
+
+  // Verifica cartão RFID
   if (!mfrc522.PICC_IsNewCardPresent() || !mfrc522.PICC_ReadCardSerial())
     return;
 
   String uid = lerUID(mfrc522.uid);
-  DateTime agora = rtc.now();
+  String horaAtual = getHoraAtual();
 
   int idx = buscarUsuario(uid);
   String acao;
@@ -148,24 +187,26 @@ void loop() {
   }
 
   // Feedback sonoro/visual
-  digitalWrite(LED_PIN, HIGH);
+  digitalWrite(LED_VERDE, HIGH);
+  digitalWrite(LED_VERMELHO, LOW);
   tone(BUZZER_PIN, 1000);
   delay(300);
   noTone(BUZZER_PIN);
-  digitalWrite(LED_PIN, LOW);
+  digitalWrite(LED_VERDE, LOW);
 
   // Leitura do DHT
   float temperatura = dht.readTemperature();
   float umidade = dht.readHumidity();
 
-  // Monta mensagem JSON para enviar ao Node-RED
+  // Monta mensagem JSON
   String mensagem = "{";
   mensagem += "\"uid\":\"" + uid + "\",";
   mensagem += "\"acao\":\"" + acao + "\",";
   mensagem += "\"contador\":" + String(contadorPessoas) + ",";
-  mensagem += "\"hora\":\"" + String(agora.hour()) + ":" + String(agora.minute()) + ":" + String(agora.second()) + "\",";
+  mensagem += "\"hora\":\"" + horaAtual + "\",";
   mensagem += "\"temp\":" + String(temperatura, 1) + ",";
-  mensagem += "\"umid\":" + String(umidade, 1);
+  mensagem += "\"umid\":" + String(umidade, 1) + ",";
+  mensagem += "\"dist\":" + String(distancia);
   mensagem += "}";
 
   // Envia via MQTT

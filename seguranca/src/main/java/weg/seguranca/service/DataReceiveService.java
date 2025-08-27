@@ -1,10 +1,11 @@
 package weg.seguranca.service;
 
+import org.springframework.stereotype.Service;
+
 import weg.seguranca.repository.MySQLRepository;
 import weg.seguranca.repository.NoSQLRepository;
 
-import java.util.List;
-
+@Service
 public class DataReceiveService {
 
     private final MySQLRepository mySQLRepository;

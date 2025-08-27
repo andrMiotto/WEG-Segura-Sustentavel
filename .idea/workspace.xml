@@ -4,168 +4,86 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c3d3031e-c2d4-463d-a304-4b54e8a45413" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/rfid/LeituraRFIDRepetida.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/rfid/RFIDmonitor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/dto/EmergenciaDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/dto/PessoaDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/dto/SalaDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/dto/Sala_emergenciaDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/mapper/EmergenciaMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/mapper/PessoaMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/mapper/SalaMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/mapper/Sala_emergenciaMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/model/Pessoa.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/model/Sala.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/model/Sala_emergencia.java" afterDir="false" />
+    <list default="true" id="b0246a54-34c5-4cbe-9ee8-1086f6fdaf7e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/seguranca/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/config/DatabaseConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/weg/seguranca/FirexguardApplication.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/weg/seguranca/config/DatabaseConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/weg/seguranca/controller/DataController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/weg/seguranca/dto/EmergenciaDTO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/weg/seguranca/dto/PessoaDTO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/weg/seguranca/dto/SalaDTO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/weg/seguranca/dto/Sala_emergenciaDTO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/weg/seguranca/exception/CustomExeption.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/weg/seguranca/mapper/EmergenciaMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/weg/seguranca/mapper/PessoaMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/weg/seguranca/mapper/SalaMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/weg/seguranca/mapper/Sala_emergenciaMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/weg/seguranca/model/Emergencia.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/weg/seguranca/model/Pessoa.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/weg/seguranca/model/Sala.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/weg/seguranca/model/Sala_emergencia.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/weg/seguranca/repository/MySQLRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/weg/seguranca/repository/NoSQLRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/weg/seguranca/rfid/LeituraRFIDRepetida.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/weg/seguranca/rfid/RFIDmonitor$LeituraInfo.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/weg/seguranca/rfid/RFIDmonitor.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/weg/seguranca/service/DataReceiveService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/controller/DataController.java" beforeDir="false" afterPath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/controller/DataController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seguranca.iml" beforeDir="false" afterPath="$PROJECT_DIR$/seguranca.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/FirexguardApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/FirexguardApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/exception/CustomExeption.java" beforeDir="false" afterPath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/exception/CustomExeption.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/repository/MySQLRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/repository/MySQLRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/repository/NoSQLRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/repository/NoSQLRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/service/DataReceiveService.java" beforeDir="false" afterPath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/service/DataReceiveService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seguranca/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/seguranca/src/main/resources/application.properties" afterDir="false" />
     </list>
-    <list id="f57c5912-fa97-42e0-bcab-e672cd5a0ffd" name="Changes by gabriel_e_fagundes" comment="">
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/model/DataModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/model/Emergencia.java" afterDir="false" />
-    </list>
-    <list id="ffc2405f-14d6-46c2-b304-9eca90494eb2" name="Changes by leandro_f_lima" comment="">
-      <change beforePath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/service/DataSendService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/exception/CustomExeption.java" beforeDir="false" afterPath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/exception/CustomExeption.java" afterDir="false" />
-    </list>
-    <list id="e059e1d5-543b-47ee-b8e5-132388b35d17" name="Changes by maria_e_zabel" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="AnnotationType" />
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;Liiiiisssz&quot;
-  }
-}</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/andrMiotto/WEG-Segura-Sustentavel.git&quot;,
-    &quot;accountId&quot;: &quot;96561180-ae22-4b80-87d4-efc15d2aa90c&quot;
-  }
-}</component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 7
-}</component>
-  <component name="ProjectId" id="30yhd25UAJdId6wx87NNrvAZVZJ" />
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 5
+}]]></component>
+  <component name="ProjectId" id="31sdHuVhiTZrRXhitYAmqTXGIJV" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/elis_jasper/IdeaProjects/WEG-Segura-Sustentavel/assets/README&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/daniel_sismer/IdeaProjects/weg-securi/src/main/java/org/example/Main.java&quot;
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.MySQLRepository.executor": "Run",
-    "Application.NoSQLRepository.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Application.FirexguardApplication.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/elis_jasper/IdeaProjects/WEG-Segura-Sustentavel/assets/README",
-    "onboarding.tips.debug.path": "C:/Users/daniel_sismer/IdeaProjects/weg-securi/src/main/java/org/example/Main.java"
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/elis_jasper/IdeaProjects/WEG-Segura-Sustentavel/assets/README&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/daniel_sismer/IdeaProjects/weg-securi/src/main/java/org/example/Main.java&quot;
+    "last_opened_file_path": "C:/Users/daniel_sismer/WEG-Segura-Sustentavel"
   }
-}</component>
-  <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="weg.seguranca.service" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\daniel_sismer\IdeaProjects\WEG-Segura-Sustentavel\seguranca\src\main\resources" />
-      <recent name="C:\Users\daniel_sismer\IdeaProjects\WEG-Segura-Sustentavel\seguranca\src\main\resources\templates\static" />
-      <recent name="C:\Users\daniel_sismer\IdeaProjects\WEG-Segura-Sustentavel\seguranca\src\main\resources\templates" />
-      <recent name="C:\Users\daniel_sismer\IdeaProjects\weg-securi" />
-    </key>
-  </component>
+}]]></component>
   <component name="RunManager">
-    <configuration name="NoSQLRepository" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="weg.seguranca.repository.NoSQLRepository" />
-      <module name="seguranca" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="weg.seguranca.repository.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="WEG-Segura-Sustentavel" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.NoSQLRepository" />
-      </list>
-    </recent_temporary>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="WEG-Segura-Sustentavel" />
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="c3d3031e-c2d4-463d-a304-4b54e8a45413" name="Changes" comment="" />
-      <created>1754605803928</created>
+      <changelist id="b0246a54-34c5-4cbe-9ee8-1086f6fdaf7e" name="Changes" comment="" />
+      <created>1756316629670</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1754605803928</updated>
+      <updated>1756316629670</updated>
     </task>
     <servers />
-  </component>
-  <component name="UnknownFeatures">
-    <option featureType="dependencySupport" implementationName="java:org.springframework:spring-core" />
-    <option featureType="dependencySupport" implementationName="java:org.springframework.security:spring-security-core" />
-    <option featureType="dependencySupport" implementationName="java:jakarta.validation:jakarta.validation-api" />
-    <option featureType="dependencySupport" implementationName="executable:kubectl" />
-    <option featureType="dependencySupport" implementationName="java:org.springframework.data:spring-data-commons" />
-    <option featureType="dependencySupport" implementationName="java:org.hibernate.validator:hibernate-validator" />
-    <option featureType="dependencySupport" implementationName="java:org.springframework:spring-webmvc" />
-    <option featureType="dependencySupport" implementationName="java:org.projectlombok:lombok" />
-    <option featureType="dependencySupport" implementationName="java:org.springframework:spring-websocket" />
-    <option featureType="dependencySupport" implementationName="executable:docker" />
-    <option featureType="dependencySupport" implementationName="java:jakarta.persistence:jakarta.persistence-api" />
-    <option featureType="dependencySupport" implementationName="java:io.reactivex.rxjava3:rxjava" />
-    <option featureType="dependencySupport" implementationName="java:org.springframework:spring-messaging" />
-    <option featureType="dependencySupport" implementationName="java:org.springframework.boot:spring-boot" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Main.java</url>
-          <line>13</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

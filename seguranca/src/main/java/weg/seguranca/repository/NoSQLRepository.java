@@ -1,11 +1,13 @@
 package weg.seguranca.repository;
 
+import org.springframework.stereotype.Repository;
 import com.influxdb.client.InfluxDBClient;
 import com.influxdb.client.InfluxDBClientFactory;
 import com.influxdb.client.WriteApiBlocking;
 import com.influxdb.client.domain.WritePrecision;
 import com.influxdb.client.write.Point;
 
+@Repository
 public class NoSQLRepository {
 
     private static final String url = "http://localhost:8086";
@@ -13,8 +15,15 @@ public class NoSQLRepository {
     private static final String org = "WegSegura";
     private static final String bucket = "WegSegura";
 
-    public static void main(String[] args) {
+    public void testConnection() {
+        try (InfluxDBClient client = InfluxDBClientFactory.create(url, token, org, bucket)) {
+            System.out.println("✅ Conexão InfluxDB estabelecida com sucesso!");
+        } catch (Exception e) {
+            System.err.println("❌ Erro de conexão InfluxDB: " + e.getMessage());
+        }
+    }
 
+    public void insertData() {
         InfluxDBClient client = InfluxDBClientFactory.create(url, token, org, bucket);
         WriteApiBlocking writeApi = client.getWriteApiBlocking();
 
@@ -27,11 +36,9 @@ public class NoSQLRepository {
                     .time(System.currentTimeMillis(), WritePrecision.MS);
 
             writeApi.writePoint(ponto5);
-
-
             System.out.println("Dados inseridos com sucesso!");
         } catch (Exception e) {
-            e.printStackTrace();
+            System.err.println("Erro ao inserir dados: " + e.getMessage());
         } finally {
             client.close();
         }

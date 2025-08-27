@@ -1,30 +1,27 @@
 package weg.seguranca.repository;
 
+import org.springframework.stereotype.Repository;
+import org.springframework.beans.factory.annotation.Autowired;
+import javax.sql.DataSource;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.SQLException;
 
+@Repository
 public class MySQLRepository {
 
-    public static void main(String[] args) {
-        String url = "jdbc:mysql://bmjbvsmlzkvrphhok83p-mysql.services.clever-cloud.com:3306/bmjbvsmlzkvrphhok83p";
-        String usuario = "u0np3s8gbvzfctph";
-        String senha = "zXUowZICMsDyvmzTVVqV";
+    @Autowired
+    private DataSource dataSource;
 
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
+    public Connection getConnection() throws SQLException {
+        return dataSource.getConnection();
+    }
 
-            System.out.println("Tentando conectar...");
-            Connection conexao = DriverManager.getConnection(url, usuario, senha);
-            System.out.println("✅ Conexão estabelecida com sucesso!");
-
-            conexao.close();
-        } catch (ClassNotFoundException e) {
-            System.out.println("❌ Driver JDBC do MySQL não encontrado. Adicione o conector ao classpath.");
-            e.printStackTrace();
+    public void testConnection() {
+        try (Connection connection = getConnection()) {
+            System.out.println("✅ Conexão MySQL estabelecida com sucesso!");
+            System.out.println("URL: " + connection.getMetaData().getURL());
         } catch (SQLException e) {
-            System.out.println("❌ Erro de conexão com o banco:");
-            e.printStackTrace();
+            System.err.println("❌ Erro de conexão MySQL: " + e.getMessage());
         }
     }
 }

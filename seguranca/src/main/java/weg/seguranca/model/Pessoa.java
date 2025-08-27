@@ -1,7 +1,13 @@
 package weg.seguranca.model;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "pessoas")
 public class Pessoa {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String nome;
     private Integer cadastro;

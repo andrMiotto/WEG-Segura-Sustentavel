@@ -1,7 +1,13 @@
 package weg.seguranca.model;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "salas_emergencias")
 public class Sala_emergencia {
 
+    @Id
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
     private int id;
     private int salaId;
     private int emergenciaId;

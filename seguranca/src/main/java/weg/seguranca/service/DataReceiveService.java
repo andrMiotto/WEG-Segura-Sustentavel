@@ -27,6 +27,8 @@ public class DataReceiveService {
         *
         * MySQLRepository.SaveAll(entidadesTratadas); --- Salva no MySQL os dados "tratados"
         * */
+
+
     }
 
     /* */

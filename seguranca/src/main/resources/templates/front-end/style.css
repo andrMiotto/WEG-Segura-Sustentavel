@@ -1,7 +1,7 @@
         :root {
-            --teal-color: #20c997;
-            --teal-dark: #1ba085;
-            --teal-light: #6fdfc7;
+            --teal-color: #022c7a;
+            --teal-dark: #011e53;
+            --teal-light: #0048ce;
         }
 
         body {
@@ -151,7 +151,7 @@
             width: 40px;
             height: 40px;
             border-radius: 50%;
-            background: linear-gradient(45deg, #007bff, #20c997);
+            background: linear-gradient(45deg, #007bff, #091792);
             display: flex;
             align-items: center;
             justify-content: center;

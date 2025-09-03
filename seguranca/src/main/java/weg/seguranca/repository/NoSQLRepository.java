@@ -6,6 +6,12 @@ import com.influxdb.client.InfluxDBClientFactory;
 import com.influxdb.client.WriteApiBlocking;
 import com.influxdb.client.domain.WritePrecision;
 import com.influxdb.client.write.Point;
+import weg.seguranca.dto.LogMovimentoDTO;
+
+import java.sql.Connection;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
 
 @Repository
 public class NoSQLRepository {
@@ -15,12 +21,13 @@ public class NoSQLRepository {
     private static final String org = "WegSegura";
     private static final String bucket = "WegSegura";
 
-    public void testConnection() {
+    public Connection testConnection() {
         try (InfluxDBClient client = InfluxDBClientFactory.create(url, token, org, bucket)) {
             System.out.println("✅ Conexão InfluxDB estabelecida com sucesso!");
         } catch (Exception e) {
             System.err.println("❌ Erro de conexão InfluxDB: " + e.getMessage());
         }
+        return null;
     }
 
     public void insertData() {
@@ -43,4 +50,30 @@ public class NoSQLRepository {
             client.close();
         }
     }
+
+    // falta verificar as tables do influx, aguardando team IOT. Não está 100% funcional pois depende das row do DB
+    public List<LogMovimentoDTO> gettAllMoviments(){
+        List<LogMovimentoDTO> movimentos = new ArrayList<>();
+        try{
+            InfluxDBClient influxDatabase = InfluxDBClientFactory.create(url, token, org, bucket);
+            String query = "from(bucket: \"WegSegura\") |> range(start: -1h) |> filter(fn: (r) => r._measurement == \"logs_sensores\")";
+            var tables = influxDatabase.getQueryApi().query(query);
+            for(var table : tables){
+                for(var record : table.getRecords()){
+                    LogMovimentoDTO movimento = new LogMovimentoDTO();
+                    movimento.setSala((record.getValueByKey("sala")).toString());
+                    movimento.setPessoa((record.getValueByKey("pessoa")).toString());
+                    movimento.setHaMovimento((Boolean) record.getValueByKey("ha_movimento_na_sala"));
+                    movimento.setTimestamp(record.getTime());
+                    movimentos.add(movimento);
+                }
+            }
+        } catch (Exception e){
+            System.err.println("Erro ao buscar dados: " + e.getMessage());
+        }
+
+        return movimentos;
+    }
+
+
 }

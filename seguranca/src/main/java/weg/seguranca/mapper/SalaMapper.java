@@ -13,7 +13,7 @@ public class SalaMapper {
                 dto.getPortaria(),
                 dto.getUnidade(),
                 dto.getSituacaoDeRisco(),
-                dto.getIdEmergenciaAtual()
+                dto.getEmergenciaAtual()
         );
     }
 
@@ -24,7 +24,7 @@ public class SalaMapper {
                 model.getPortaria(),
                 model.getUnidade(),
                 model.getSituacaoDeRisco(),
-                model.getIdEmergenciaAtual()
+                model.getEmergenciaAtual()
         );
     }
 }

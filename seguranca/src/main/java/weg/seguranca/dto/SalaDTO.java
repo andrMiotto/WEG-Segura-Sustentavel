@@ -1,5 +1,7 @@
 package weg.seguranca.dto;
 
+import weg.seguranca.model.Emergencia;
+
 public class SalaDTO {
 
         private Integer numero;
@@ -7,17 +9,17 @@ public class SalaDTO {
         private Integer portaria;
         private String unidade;
         private Boolean situacaoDeRisco;
-        private Integer idEmergenciaAtual;
+        private Emergencia emergenciaAtual;
 
         public SalaDTO() {}
 
-        public SalaDTO(Integer numero, String bloco, Integer portaria, String unidade, Boolean situacaoDeRisco, Integer idEmergenciaAtual) {
+        public SalaDTO(Integer numero, String bloco, Integer portaria, String unidade, Boolean situacaoDeRisco, Emergencia emergenciaAtual) {
             this.numero = numero;
             this.bloco = bloco;
             this.portaria = portaria;
             this.unidade = unidade;
             this.situacaoDeRisco = situacaoDeRisco;
-            this.idEmergenciaAtual = idEmergenciaAtual;
+            this.emergenciaAtual = emergenciaAtual;
         }
 
         public Integer getNumero() { return numero; }
@@ -35,6 +37,6 @@ public class SalaDTO {
         public Boolean getSituacaoDeRisco() { return situacaoDeRisco; }
         public void setSituacaoDeRisco(Boolean situacaoDeRisco) { this.situacaoDeRisco = situacaoDeRisco; }
 
-        public Integer getIdEmergenciaAtual() { return idEmergenciaAtual; }
-        public void setIdEmergenciaAtual(Integer idEmergenciaAtual) { this.idEmergenciaAtual = idEmergenciaAtual; }
+        public Emergencia getEmergenciaAtual() { return emergenciaAtual; }
+        public void setEmergenciaAtual(Emergencia emergenciaAtual) { this.emergenciaAtual = emergenciaAtual; }
     }

@@ -9,8 +9,8 @@ public class Sala_emergenciaMapper {
         if (model == null) return null;
         return new Sala_emergenciaDTO(
                 model.getId(),
-                model.getSalaId(),
-                model.getEmergenciaId()
+                model.getSala(),
+                model.getEmergencia()
         );
     }
 
@@ -18,8 +18,8 @@ public class Sala_emergenciaMapper {
         if (dto == null) return null;
         return new Sala_emergencia(
                 dto.getId(),
-                dto.getSalaId(),
-                dto.getEmergenciaId()
+                dto.getSala(),
+                dto.getEmergencia()
         );
     }
 

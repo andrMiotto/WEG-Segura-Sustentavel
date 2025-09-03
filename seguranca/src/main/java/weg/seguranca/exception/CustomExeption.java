@@ -1,24 +1,23 @@
 package weg.seguranca.exception;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.xml.sax.ErrorHandler;
 import weg.seguranca.rfid.LeituraRFIDRepetida;
 import weg.seguranca.rfid.RFIDmonitor;
+import weg.model.Pessoa;
 
-import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-@Component
+import static java.sql.DriverManager.getConnection;
+
 public class CustomExeption {
 
-    @Autowired
-    private DataSource dataSource;
+    Boolean alertaLigado;
 
     public void updatePresenca(String sql, String insert, String tagId, int salaId, boolean presente) throws SQLException {
-        try(Connection conn = dataSource.getConnection()){ //metodo de conexão com o db
+        try(Connection conn = getConnection()){ //metodo de conexão com o db
             conn.setAutoCommit(false);
 
             try(PreparedStatement stmt = conn.prepareStatement(sql)){
@@ -43,11 +42,31 @@ public class CustomExeption {
         }
     }
 
-    public void processarLeitura(String tagId){
-        try{
-            RFIDmonitor.verificarLeitura(tagId);
-        } catch (LeituraRFIDRepetida e){
-            e.getMessage();
+    public void processarLeitura(String id, Pessoa pessoa){
+
+        String ultimoRFIDlido;
+        long ultimoTempo;
+        long agora = System.currentTimeMillis();
+
+        if(alertaLigado == true){ //Alerta ligado recebe o sinal do Iot.
+
+            try{
+                if(id.equals(ultimoRFIDlido) && (agora - ultimoTempo) > 15000){
+                    System.out.println("Emergência detectada.");
+                }
+            }catch(Exception erro){
+                System.out.println("Emergência detectada!!!!");
+                System.out.println("Sala: " + pessoa.getIdSalaAtual);
+            }
+        }else{
+            try{
+                RFIDmonitor.verificarLeitura(tagId);
+            } catch (LeituraRFIDRepetida e){
+                e.getMessage();
+            }      
         }
+
+        ultimoRFIDlido = id;
+        ultimoTempo = agora;
     }
 }

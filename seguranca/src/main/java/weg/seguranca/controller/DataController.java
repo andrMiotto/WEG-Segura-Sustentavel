@@ -20,11 +20,35 @@ public class DataController {
         // métodos de tratamento de dados
 
 
-        model.addAttribute("sala", 211);
-        model.addAttribute("pessoa", 10);
-        model.addAttribute("ha_movimento_na_sala", true);
+        // Endpoint pra pegar dados
+        @GetMapping("/getData")
+        public String receberDadosDoNoSQL() {
 
-        return "index";
+            //nome do método que voces criarem para pegar os dados do NOSQL substitua aqui
+            dataReceiveService.pegarDado();
+            return "Dados do NOSQL transferidos para ca";
+        }
+
+        // Endpoint pra processar
+        @PostMapping("/dataProcessing")
+        public String tratarDados() {
+
+            //nome do método que voces criarem para tratar dados substitua aqui
+            dataReceiveService.tratarDados();
+            return "Tratamento de dados feito com sucesso!";
+        }
+
+
+        // Endpoint pra enviar pro MYSQL
+        @PostMapping("/setData")
+        public String tratarDados() {
+
+            //nome do método que voces criarem para tratar dados substitua aqui
+            dataReceiveService.enviarDado();
+            return "Envio de dados para o MYSQL feito com sucesso!";
+        }
+
+    }
     }
 
 }

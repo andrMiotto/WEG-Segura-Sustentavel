@@ -136,6 +136,41 @@ O sistema foi projetado para seguir integralmente a Lei Geral de Proteção de D
 
 # Como Acessar ❓
 
+Para rodar o projeto na sua máquina, siga os passos abaixo: 
+
+1️⃣ Clone este repositório:
+```bash
+git clone https://github.com/andrMiotto/WEG-Segura-Sustentavel.git
+````
+2️⃣ Entre na pasta do projeto (se necessário, crie uma nova):
+```bash
+cd WEG-Segura-Sustentavel/seguranca
+````
+3️⃣ Execute o projeto: <br> 
+
+### Front-End: 
+1️⃣ Abra a pasta do **front-end** no VS Code. <br>
+2️⃣ Instale a extensão **Live Server** (se ainda não tiver). <br>
+3️⃣ Clique com o botão direito no arquivo index.html e selecione **Go Live**. <br>
+4️⃣ O navegador abrirá automaticamente mostrando a interface. <br>
+
+### Back-End: 
+1️⃣ Execute o projeto com Maven:
+```bash
+./mvnw spring-boot:run
+````
+
+👉 Caso já possua Maven instalado:
+```bash
+mvn spring-boot:run
+````
+
+2️⃣ Quando o servidor iniciar, aparecerá no terminal um link parecido com:
+```bash
+http://localhost:8080
+````
+
+➡️ Clique nesse link ou copie/cole no navegador para acessar.
 
 # Autores 👤
 
@@ -143,6 +178,7 @@ O sistema foi projetado para seguir integralmente a Lei Geral de Proteção de D
 
 
  
+
 
 
 

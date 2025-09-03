@@ -2,8 +2,13 @@ package weg.seguranca.service;
 
 import org.springframework.stereotype.Service;
 
+import weg.seguranca.dto.LogMovimentoDTO;
 import weg.seguranca.repository.MySQLRepository;
 import weg.seguranca.repository.NoSQLRepository;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.util.List;
 
 @Service
 public class DataReceiveService {
@@ -16,21 +21,16 @@ public class DataReceiveService {
         this.noSQLRepository = noSQLRepository;
     }
 
-    public void importData(){
-        /* Aguardar a equipe reponsável pelos models e DTO*/
-        /*=============
-        *   Prévia
-        *=============
-        *
-        * List <OBJETO-DOCUMENT> documents = noSQLRepository.findAll(); --- Método responsável por encontrar todos os dados do objeto especificado
-        * List <OBJETO-ENTIDADE> entidadesTratadas = documents.stream()... ---- Rastrea e ttratar valores, aplicando a regra de negócio
-        *
-        * MySQLRepository.SaveAll(entidadesTratadas); --- Salva no MySQL os dados "tratados"
-        * */
+    public void importData() {
+        List<LogMovimentoDTO> logs = noSQLRepository.gettAllMoviments();
 
+        for (LogMovimentoDTO log : logs) {
+            System.out.println("[" + log.getTimestamp() + "] Sala: " + log.getSala()
+                    + " | Pessoa: " + log.getPessoa()
+                    + " | Movimento: " + log.getHaMovimento());
 
+        }
     }
 
-    /* */
-    // -
+
 }

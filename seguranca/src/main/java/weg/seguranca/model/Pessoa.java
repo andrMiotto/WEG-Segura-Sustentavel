@@ -14,10 +14,12 @@ public class Pessoa {
     private String tipo;
     private Boolean situacaoDeRisco;
 
-    @OneToMany
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "id_sala_atual")
     private Sala salaAtual;
 
-    @OneToMany
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "id_emergencia_atual")
     private Emergencia emergenciaAtual;
 
     public Pessoa() {}

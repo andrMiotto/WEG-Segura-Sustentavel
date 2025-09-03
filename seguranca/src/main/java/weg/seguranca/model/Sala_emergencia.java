@@ -9,9 +9,13 @@ public class Sala_emergencia {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private int id;
+
+    @ManyToOne
+    @JoinColumn(name = "sala_id")
     private Sala sala;
 
-    @OneToMany
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "emergencia_id")
     private Emergencia emergencia;
 
     public Sala_emergencia() {

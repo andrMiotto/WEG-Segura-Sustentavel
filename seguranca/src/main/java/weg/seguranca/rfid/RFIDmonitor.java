@@ -25,6 +25,8 @@ public class RFIDmonitor {
         if(info.contador > maxRegistro){
             throw new LeituraRFIDRepetida(tagId, info.contador, tempo);
         }
+
+        String ultimoRFIDlido = tagId;
     }
 
     public static class LeituraInfo{

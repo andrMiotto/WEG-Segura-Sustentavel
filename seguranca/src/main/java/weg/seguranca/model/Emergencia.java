@@ -1,9 +1,16 @@
 package weg.seguranca.model;
 
+import jakarta.persistence.*;
+
 import java.time.LocalDateTime;
+
+@Entity
+@Table(name = "emergencias")
 
 public class Emergencia {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String titulo;
     private String descricao;

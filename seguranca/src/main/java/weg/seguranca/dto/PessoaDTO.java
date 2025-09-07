@@ -1,23 +1,26 @@
 package weg.seguranca.dto;
 
+import weg.seguranca.model.Emergencia;
+import weg.seguranca.model.Sala;
+
 public class PessoaDTO {
 
     private String nome;
     private Integer cadastro;
     private String tipo;
     private Boolean situacaoDeRisco;
-    private Integer idSalaAtual;
-    private Integer idEmergenciaAtual;
+    private Sala salaAtual;
+    private Emergencia emergenciaAtual;
 
     public PessoaDTO() {}
 
-    public PessoaDTO(String nome, Integer cadastro, String tipo, Boolean situacaoDeRisco, Integer idSalaAtual, Integer idEmergenciaAtual) {
+    public PessoaDTO(String nome, Integer cadastro, String tipo, Boolean situacaoDeRisco, Sala salaAtual, Emergencia emergenciaAtual) {
         this.nome = nome;
         this.cadastro = cadastro;
         this.tipo = tipo;
         this.situacaoDeRisco = situacaoDeRisco;
-        this.idSalaAtual = idSalaAtual;
-        this.idEmergenciaAtual = idEmergenciaAtual;
+        this.salaAtual = salaAtual;
+        this.emergenciaAtual = emergenciaAtual;
     }
 
     // Getters e Setters
@@ -33,9 +36,9 @@ public class PessoaDTO {
     public Boolean getSituacaoDeRisco() { return situacaoDeRisco; }
     public void setSituacaoDeRisco(Boolean situacaoDeRisco) { this.situacaoDeRisco = situacaoDeRisco; }
 
-    public Integer getIdSalaAtual() { return idSalaAtual; }
-    public void setIdSalaAtual(Integer idSalaAtual) { this.idSalaAtual = idSalaAtual; }
+    public Sala getSalaAtual() { return salaAtual; }
+    public void setSalaAtual(Sala salaAtual) { this.salaAtual = salaAtual; }
 
-    public Integer getIdEmergenciaAtual() { return idEmergenciaAtual; }
-    public void setIdEmergenciaAtual(Integer idEmergenciaAtual) { this.idEmergenciaAtual = idEmergenciaAtual; }
+    public Emergencia getEmergenciaAtual() { return emergenciaAtual; }
+    public void setEmergenciaAtual(Emergencia emergenciaAtual) { this.emergenciaAtual = emergenciaAtual; }
 }

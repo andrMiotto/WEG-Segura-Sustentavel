@@ -174,13 +174,103 @@ http://localhost:8080
 
 # Autores 👤
 
-<table style="border-spacing: 20px; border-collapse: separate; width: 100%;"> <tr> <td style="text-align: center; border: 2px solid #ccc; padding: 5px;"> <img loading="lazy" src="assets/README/Ana.png" width="115" height="115"><br> <sub><a href="https://github.com/Ana18022008">Ana Beatriz O. Ribeiro</a></sub> </td> <td style="text-align: center; border: 2px solid #ccc; padding: 5px;"> <img loading="lazy" src="/assets/README/Andre.png" width="115" height="115"><br> <sub><a href="https://github.com/andrMiotto">André Luis Miotto Pereira</a></sub> </td> <td style="text-align: center; border: 2px solid #ccc; padding: 5px;"> <img loading="lazy" src="assets/README/Cadu.png" width="115" height="115"><br> <sub><a href="https://github.com">Carlos Eduardo Braga</a></sub> </td> <td style="text-align: center; border: 2px solid #ccc; padding: 5px;"> <img loading="lazy" src="assets/README/Catarina.png" width="115" height="115"><br> <sub><a href="https://github.com/Catarina0830">Catarina Klein</a></sub> </td> <td style="text-align: center; border: 2px solid #ccc; padding: 5px;"> <img loading="lazy" src="assets/README/Daniel.png" width="115" height="115"><br> <sub><a href="https://github.com/danielSismer">Daniel Vinicius Rios Sismer</a></sub> </td> <td style="text-align: center; border: 2px solid #ccc; padding: 5px;"> <img loading="lazy" src="assets/README/Dias.png" width="115" height="115"><br> <sub><a href="https://github.com/EduardoDias1902">Eduardo Dias da Maia</a></sub> </td> </tr> <tr> <td style="text-align: center; border: 2px solid #ccc; padding: 5px;"> <img loading="lazy" src="assets/README/Elis.png" width="115" height="115"><br> <sub><a href="https://github.com/Liiiiisssz">Elis Jasper</a></sub> </td> <td style="text-align: center; border: 2px solid #ccc; padding: 5px;"> <img loading="lazy" src="assets/README/Emanuelli.png" width="115" height="115"><br> <sub><a href="https://github.com/manu-hostin">Emanuelle Cristina Hostin</a></sub> </td> <td style="text-align: center; border: 2px solid #ccc; padding: 5px;"> <img loading="lazy" src="assets/README/Fagundes.png" width="115" height="115"><br> <sub><a href="https://github.com/gabrielEFagundes">Gabriel Ehrat Fagundes</a></sub> </td> <td style="text-align: center; border: 2px solid #ccc; padding: 5px;"> <img loading="lazy" src="assets/README/Gabi.png" width="115" height="115"><br> <sub><a href="https://github.com/Viihh-77">Gabrielli Vitória Glowatski</a></sub> </td> <td style="text-align: center; border: 2px solid #ccc; padding: 5px;"> <img loading="lazy" src="assets/README/Hugo.png" width="115" height="115"><br> <sub><a href="https://github.com/HugoDeleonP">Hugo Deleon Giminiani<br> de Souza Paim</a></sub> </td> <td style="text-align: center; border: 2px solid #ccc; padding: 5px;"> <img loading="lazy" src="assets/README/Iasmin.png" width="115" height="115"><br> <sub><a href="https://github.com/min07775">Iasmin Nunes</a></sub> </td> </tr> <tr> <td style="text-align: center; border: 2px solid #ccc; padding: 5px;"> <img loading="lazy" src="assets/README/Jose.png" width="115" height="115"><br> <sub><a href="https://github.com/Jose7764">José Azarías Pérez Torres</a></sub> </td> <td style="text-align: center; border: 2px solid #ccc; padding: 5px;"> <img loading="lazy" src="assets/README/Kael.png" width="115" height="115"><br> <sub><a href="https://github.com/KaelLuih">Kael Luih de Araujo</a></sub> </td> <td style="text-align: center; border: 2px solid #ccc; padding: 5px;"> <img loading="lazy" src="assets/README/Kerolyn.png" width="115" height="115"><br> <sub><a href="https://github.com/kerolynpadilha">Kerolyn Messias Padilha</a></sub> </td> <td style="text-align: center; border: 2px solid #ccc; padding: 5px;"> <img loading="lazy" src="assets/README/leandro.png" width="115" height="115"><br> <sub><a href="https://github.com/leandroFilipy">Leandro Filipy de Lima</a></sub> </td> <td style="text-align: center; border: 2px solid #ccc; padding: 5px;"> <img loading="lazy" src="assets/README/Lucas.png" width="115" height="115"><br> <sub><a href="https://github.com/lucasschlei">Lucas Schlei</a></sub> </td> <td style="text-align: center; border: 2px solid #ccc; padding: 5px;"> <img loading="lazy" src="assets/README/Maria.png" width="115" height="115"><br> <sub><a href="https://github.com/Dudazabel">Maria Eduarda Zabel</a></sub> </td> </tr> <tr> <td style="text-align: center; border: 2px solid #ccc; padding: 5px;"> <img loading="lazy" src="assets/README/Castro.jpg" width="115" height="115"><br> <sub><a href="https://github.com/Matheus089107">Matheus Alexandre<br> de Castro</a></sub> </td> <td style="text-align: center; border: 2px solid #ccc; padding: 5px;"> <img loading="lazy" src="assets/README/Melissa.png" width="115" height="115"><br> <sub><a href="https://github.com/melll1601">Melissa Rafaela Pereira</a></sub> </td> <td style="text-align: center; border: 2px solid #ccc; padding: 5px;"> <img loading="lazy" src="assets/README/Murilo.png" width="115" height="115"><br> <sub><a href="https://github.com/Murilo2901">Murilo Kerschbaum</a></sub> </td> </tr> </table>
-
-
- 
-
-
-
-
+<table align="center">
+  <tr>
+    <td align="center" width="160" height="200" style="border:2px solid #ccc;">
+      <img src="assets/README/Ana.png" width="115" height="115"><br>
+      <sub><a href="https://github.com/Ana18022008">Ana Beatriz O. Ribeiro</a><br><span style="color:#32CD32"><b>⚙️ Backend</b></span></sub>
+    </td>
+    <td align="center" width="160" height="200" style="border:2px solid #ccc;">
+      <img src="assets/README/Andre.png" width="115" height="115"><br>
+      <sub><a href="https://github.com/andrMiotto">André L. Miotto Pereira</a><br><span style="color:#FF69B4"><b>🎨 Frontend</b></span></sub>
+    </td>
+    <td align="center" width="160" height="200" style="border:2px solid #ccc;">
+      <img src="assets/README/Cadu.png" width="115" height="115"><br>
+      <sub><a href="https://github.com">Carlos Eduardo Braga</a><br><span style="color:#1E90FF"><b>🗄️ Banco de Dados</b></span></sub>
+    </td>
+    <td align="center" width="160" height="200" style="border:2px solid #ccc;">
+      <img src="assets/README/Catarina.png" width="115" height="115"><br>
+      <sub><a href="https://github.com/Catarina0830">Catarina Klein</a><br><span style="color:#FF8C00"><b>📡 IoT</b></span></sub>
+    </td>
+    <td align="center" width="160" height="200" style="border:2px solid #ccc;">
+      <img src="assets/README/Daniel.png" width="115" height="115"><br>
+      <sub><a href="https://github.com/danielSismer">Daniel V. Rios Sismer</a><br><span style="color:#32CD32"><b>⚙️ Backend</b></span></sub>
+    </td>
+    <td align="center" width="160" height="200" style="border:2px solid #ccc;">
+      <img src="assets/README/Dias.png" width="115" height="115"><br>
+      <sub><a href="https://github.com/EduardoDias1902">Eduardo Dias da Maia</a><br><span style="color:#FF8C00"><b>📡 IoT</b></span></sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="160" height="200" style="border:2px solid #ccc;">
+      <img src="assets/README/Elis.png" width="115" height="115"><br>
+      <sub><a href="https://github.com/Liiiiisssz">Elis Jasper</a><br><span style="color:#32CD32"><b>⚙️ Backend</b></span></sub>
+    </td>
+    <td align="center" width="160" height="200" style="border:2px solid #ccc;">
+      <img src="assets/README/Emanuelli.png" width="115" height="115"><br>
+      <sub><a href="https://github.com/manu-hostin">Emanuelle C. Hostin</a><br><span style="color:#DC143C"><b>🔌 Eletrônica</b></span></sub>
+    </td>
+    <td align="center" width="160" height="200" style="border:2px solid #ccc;">
+      <img src="assets/README/Fagundes.png" width="115" height="115"><br>
+      <sub><a href="https://github.com/gabrielEFagundes">Gabriel Ehrat Fagundes</a><br><span style="color:#32CD32"><b>⚙️ Backend</b></span></sub>
+    </td>
+    <td align="center" width="160" height="200" style="border:2px solid #ccc;">
+      <img src="assets/README/Gabi.png" width="115" height="115"><br>
+      <sub><a href="https://github.com/Viihh-77">Gabrielli V. Glowatski</a><br><span style="color:#DC143C"><b>🔌 Eletrônica</b></span></sub>
+    </td>
+    <td align="center" width="160" height="200" style="border:2px solid #ccc;">
+      <img src="assets/README/Hugo.png" width="115" height="115"><br>
+      <sub><a href="https://github.com/HugoDeleonP">Hugo Deleon G. S. Paim</a><br><span style="color:#32CD32"><b>⚙️ Backend</b></span></sub>
+    </td>
+    <td align="center" width="160" height="200" style="border:2px solid #ccc;">
+      <img src="assets/README/Iasmin.png" width="115" height="115"><br>
+      <sub><a href="https://github.com/min07775">Iasmin Nunes</a><br><span style="color:#DC143C"><b>🔌 Eletrônica</b></span></sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="160" height="200" style="border:2px solid #ccc;">
+      <img src="assets/README/Jose.png" width="115" height="115"><br>
+      <sub><a href="https://github.com/Jose7764">José Azarías Pérez Torres</a><br><span style="color:#FF69B4"><b>🎨 Frontend</b></span></sub>
+    </td>
+    <td align="center" width="160" height="200" style="border:2px solid #ccc;">
+      <img src="assets/README/Kael.png" width="115" height="115"><br>
+      <sub><a href="https://github.com/KaelLuih">Kael Luih de Araujo</a><br><span style="color:#FF69B4"><b>🎨 Frontend</b></span></sub>
+    </td>
+    <td align="center" width="160" height="200" style="border:2px solid #ccc;">
+      <img src="assets/README/Kerolyn.png" width="115" height="115"><br>
+      <sub><a href="https://github.com/kerolynpadilha">Kerolyn Messias Padilha</a><br><span style="color:#1E90FF"><b>🗄️ Banco de Dados</b></span></sub>
+    </td>
+    <td align="center" width="160" height="200" style="border:2px solid #ccc;">
+      <img src="assets/README/leandro.png" width="115" height="115"><br>
+      <sub><a href="https://github.com/leandroFilipy">Leandro Filipy de Lima</a><br><span style="color:#32CD32"><b>⚙️ Backend</b></span></sub>
+    </td>
+    <td align="center" width="160" height="200" style="border:2px solid #ccc;">
+      <img src="assets/README/Lucas.png" width="115" height="115"><br>
+      <sub><a href="https://github.com/lucasschlei">Lucas Schlei</a><br><span style="color:#1E90FF"><b>🗄️ Banco de Dados</b></span></sub>
+    </td>
+    <td align="center" width="160" height="200" style="border:2px solid #ccc;">
+      <img src="assets/README/Maria.png" width="115" height="115"><br>
+      <sub><a href="https://github.com/Dudazabel">Maria Eduarda Zabel</a><br><span style="color:#32CD32"><b>⚙️ Backend</b></span></sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="160" height="200" style="border:2px solid #ccc;">
+      <img src="assets/README/Castro.jpg" width="115" height="115"><br>
+      <sub><a href="https://github.com/Matheus089107">Matheus A. de Castro</a><br><span style="color:#DC143C"><b>🔌 Eletrônica</b></span></sub>
+    </td>
+    <td align="center" width="160" height="200" style="border:2px solid #ccc;">
+      <img src="assets/README/Melissa.png" width="115" height="115"><br>
+      <sub><a href="https://github.com/melll1601">Melissa Rafaela Pereira</a><br><span style="color:#DC143C"><b>🔌 Eletrônica</b></span></sub>
+    </td>
+    <td align="center" width="160" height="200" style="border:2px solid #ccc;">
+      <img src="assets/README/Murilo.png" width="115" height="115"><br>
+      <sub><a href="https://github.com/Murilo2901">Murilo Kerschbaum</a><br><span style="color:#1E90FF"><b>🗄️ Banco de Dados</b></span></sub>
+    </td>
+    <td align="center" width="160" height="200" style="border:2px solid #ccc;">
+      <img src="assets/README/Valentim.png" width="115" height="115"><br>
+      <sub><a href="https://github.com/jpsvalentim">João Pedro S. Valentim</a><br><span style="color:#1E90FF"><b>⛑️ Supervisor</b></span></sub>
+    </td>
+  </tr>
+</table>
 
 

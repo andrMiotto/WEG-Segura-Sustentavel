@@ -10,10 +10,9 @@ if %errorlevel% neq 0 (
     exit /b 1
 )
 
-REM Para e remove containers existentes se houver
-echo 🔄 Parando containers existentes...
+REM Para container existente se houver (NÃO remove mais!)
+echo 🔄 Parando InfluxDB se estiver rodando...
 docker stop weg-segura-influxdb >nul 2>&1
-docker rm weg-segura-influxdb >nul 2>&1
 
 REM Inicia somente serviços necessários (InfluxDB continua local, MySQL já está na Clever Cloud)
 echo 🐳 Iniciando InfluxDB...
@@ -54,7 +53,7 @@ if "%influxdb_running%"=="true" (
     echo    URL: http://192.168.56.1:8086
     echo    Organizacao: Weg
     echo    Bucket: WegSegura
-    echo    Token: EnMZnSwm08sptanEmlbWavHASmtDEmYHepuRJzezGARphMo6kM1vMGF_SyLbq1VFSNPs8G13BDyXIXkXpOYE1A==
+    echo    Token: (verifique no painel do Influx em Settings > API Tokens)
     echo.
 )
 

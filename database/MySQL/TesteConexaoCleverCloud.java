@@ -6,9 +6,9 @@ import java.sql.SQLException;
 
 public class TesteConexaoCleverCloud {
     public static void main(String[] args) {
-        String url = "jdbc:mysql://bmjbvsmlzkvrphhok83p-mysql.services.clever-cloud.com:3306/bmjbvsmlzkvrphhok83p";
-        String usuario = "u0np3s8gbvzfctph";
-        String senha = "zXUowZICMsDyvmzTVVqV";
+        String url = "jdbc:mysql://root:ZtzdINLCVuLMfpSTlHudposOErVCfBhq@yamabiko.proxy.rlwy.net:23402/railway";
+        String usuario = "root";
+        String senha = "ZtzdINLCVuLMfpSTlHudposOErVCfBhq";
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");

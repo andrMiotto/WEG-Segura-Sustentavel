@@ -5,14 +5,8 @@ import com.influxdb.client.domain.WritePrecision;
 import com.influxdb.client.write.Point;
 import com.influxdb.query.FluxRecord;
 import com.influxdb.query.FluxTable;
-import weg.seguranca.util.MySQLDatabase;
 import weg.seguranca.util.NoSQLDatabase;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.sql.Timestamp;
-import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -42,7 +36,6 @@ public class TestInflux {
     }
 
     public static List<FluxTable> recebimento() {
-        // Executa a query
         QueryApi queryApi = influx.getQueryApi();
         String flux = "from(bucket: \"" + influx.getBucket() + "\") "
                 + "|> range(start: -1h) "
@@ -50,7 +43,6 @@ public class TestInflux {
 
         List<FluxTable> tables = queryApi.query(flux, influx.getOrg());
 
-        // Itera sobre os resultados
         for (FluxTable table : tables) {
             for (FluxRecord record : table.getRecords()) {
                 System.out.println(
@@ -60,64 +52,10 @@ public class TestInflux {
                                 " | Movimento: " + record.getValue()
                 );
 
-                salvarNoMySQL(record);
+                SenderSQL.salvarMySQL(record);
             }
         }
         return tables;
     }
 
-    private static void salvarNoMySQL(FluxRecord record) {
-        try (Connection conn = MySQLDatabase.connect()) {
-
-            // Converte os dados do Influx
-            String pessoa = (String) record.getValueByKey("pessoa");
-            String sala = (String) record.getValueByKey("sala");
-            Boolean movimento = (Boolean) record.getValue();
-            Instant tempo = record.getTime();
-            Timestamp timestamp = tempo != null ? Timestamp.from(tempo) : new Timestamp(System.currentTimeMillis());
-
-
-            //  Verificação de nulos
-            if (pessoa == null || sala == null || movimento == null) {
-                System.out.println("Registro ignorado (valores nulos).");
-                return;
-            }
-
-            //  Verificação de duplicados em "emergencia"
-            String checkSql = "SELECT COUNT(*) FROM emergencia WHERE pessoa = ? AND sala = ? AND tempo = ?";
-            try (PreparedStatement checkStmt = conn.prepareStatement(checkSql)) {
-                checkStmt.setString(1, pessoa);
-                checkStmt.setString(2, sala);
-                checkStmt.setTimestamp(3, timestamp);
-                var rs = checkStmt.executeQuery();
-                if (rs.next() && rs.getInt(1) > 0) {
-                    System.out.println("Registro duplicado ignorado!");
-                    return;
-                }
-            }
-
-            // Inserir na tabela emergencia
-            String sqlEmergencia = "INSERT INTO emergencia (pessoa, sala, movimento, tempo) VALUES (?, ?, ?, ?)";
-            try (PreparedStatement stmt = conn.prepareStatement(sqlEmergencia)) {
-                stmt.setString(1, pessoa);
-                stmt.setString(2, sala);
-                stmt.setBoolean(3, movimento != null ? movimento : false);
-                stmt.setTimestamp(4, timestamp);
-                stmt.executeUpdate();
-            }
-
-            // Inserir na tabela sala_emergencia
-            String sqlSala = "INSERT INTO sala_emergencia (sala, ultima_atividade) VALUES (?, ?)";
-            try (PreparedStatement stmt = conn.prepareStatement(sqlSala)) {
-                stmt.setString(1, sala);
-                stmt.setTimestamp(2, timestamp);
-                stmt.executeUpdate();
-            }
-
-            System.out.println("Registro inserido no MySQL com sucesso!");
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
 }

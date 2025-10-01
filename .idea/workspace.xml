@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cc9c038b-7544-4e6c-ab61-67987bb640f4" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/service/TestInflux.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/util/NoSQLDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/seguranca/src/main/java/weg/seguranca/util/NoSQLDatabase.java" afterDir="false" />
     </list>
     <list id="df771c6b-ec63-4002-8fee-e7d239e920f0" name="Changes by hugo" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -40,7 +41,7 @@
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "javaiscripiti",
+    "git-widget-placeholder": "Rebasing javaiscripiti",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",

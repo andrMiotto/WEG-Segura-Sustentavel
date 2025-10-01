@@ -20,7 +20,7 @@ public class TestInflux {
         Point ponto1 = Point.measurement("logs_sensores")
                 .addField("ha_movimento_na_sala", true)
                 .addTag("pessoa", "81787")
-                .addTag("sala", "211")
+                .addTag("sala", "1")
                 .addTag("temperatura", "50")
                 .addTag("umidade", "20")
 
@@ -28,8 +28,8 @@ public class TestInflux {
 
         Point ponto2 = Point.measurement("logs_sensores")
                 .addField("ha_movimento_na_sala", false)
-                .addTag("pessoa", "12345")
-                .addTag("sala", "105")
+                .addTag("pessoa", "81785")
+                .addTag("sala", "2")
                 .addTag("temperatura", "30")
                 .addTag("umidade", "40")
 

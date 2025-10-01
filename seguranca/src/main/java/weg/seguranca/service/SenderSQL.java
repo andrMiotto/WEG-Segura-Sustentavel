@@ -1,6 +1,7 @@
 package weg.seguranca.service;
 
 import com.influxdb.query.FluxRecord;
+import jakarta.persistence.criteria.CriteriaBuilder;
 import weg.seguranca.dao.EmergenciaDao;
 import weg.seguranca.dao.PessoaDao;
 import weg.seguranca.dao.SalaDao;
@@ -36,8 +37,8 @@ public class SenderSQL {
             String sala = (String) record.getValueByKey("sala");
             Boolean movimento = (Boolean) record.getValue();
             Instant tempo = record.getTime();
-            Double temperatura = (Double) record.getValueByKey("temperatura");
-            Double umidade = (Double) record.getValueByKey("umidade");
+            String temperatura = (String) record.getValueByKey("temperatura");
+            String umidade = (String) record.getValueByKey("umidade");
             Timestamp timestamp = tempo != null ? Timestamp.from(tempo) : new Timestamp(System.currentTimeMillis());
 
             if (pessoa == null || sala == null || movimento == null || temperatura == null || umidade == null) {
@@ -45,6 +46,14 @@ public class SenderSQL {
                 return;
             }
 
+            int pessoaInt = Integer.parseInt(pessoa);
+            int salaInt = Integer.parseInt(sala);
+            Double temperaturaDouble = Double.parseDouble(temperatura);
+            Double umidadeDouble = Double.parseDouble(umidade);
+
+            updateSalaAtual(pessoaInt, salaInt);
+
+            /*
             String checkSql = """
                     Select count(cadastro) from pessoas
                     where id_sala_atual = ?;
@@ -64,6 +73,7 @@ public class SenderSQL {
                 stmt.setTimestamp(2, timestamp);
                 stmt.executeUpdate();
             }
+            */
 
             System.out.println("Registro inserido no MySQL com sucesso!");
 
@@ -79,9 +89,11 @@ public class SenderSQL {
 
         try{
             pessoaData.updateSalaAtual(pessoa);
+            System.out.println("Enviado para o MySQL com sucesso!");
         }catch (SQLException e){
             e.printStackTrace();
         }
+
     }
 
 

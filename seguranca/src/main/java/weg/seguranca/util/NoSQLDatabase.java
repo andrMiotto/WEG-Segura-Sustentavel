@@ -30,7 +30,7 @@ public class NoSQLDatabase {
 
         try {
 
-
+            insertTeste();
             QueryApi queryApi = client.getQueryApi();
 
             recebimento();
@@ -58,9 +58,8 @@ public class NoSQLDatabase {
                 .addField("ha_movimento_na_sala", false)
                 .time(System.currentTimeMillis(), WritePrecision.MS);
 
-        pontos.add(ponto1);
-
         writeApi.writePoint(ponto1); //teste
+        writeApi.writePoint(ponto2);
 
         System.out.println("Dados inseridos com sucesso!");
     }

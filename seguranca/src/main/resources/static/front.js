@@ -98,3 +98,21 @@ fetch('/api/emergencias').then(res => res.json()).then(emergencias => {
         contDivs++;
     })
 })
+
+document.getElementById('download').addEventListener('click', function() {
+    const element = document.createElement('a');
+    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(`
+        === RELATÓRIO GERAL ===
+
+        Data Atual: ${dataAtual.toISOString()}
+
+        Salas Ocupadas no momento: ${contSalasOcupadas}
+        Salas Vazias no momento: ${contSalasVazias}
+        Total de pessoas: ${totalPessoas}
+        `));
+    element.setAttribute('download', 'relatorio.txt');
+
+    document.body.appendChild(element);
+    element.click();
+    document.body.removeChild(element);
+})

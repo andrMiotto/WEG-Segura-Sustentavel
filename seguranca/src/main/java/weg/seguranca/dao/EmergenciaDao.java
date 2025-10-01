@@ -8,7 +8,7 @@ import java.util.List;
 
 public class EmergenciaDao {
 
-    private Connection conn;
+    private static Connection conn;
 
     public EmergenciaDao(Connection conn) {
         this.conn = conn;

@@ -69,7 +69,6 @@ public class TestInflux {
     private static void salvarNoMySQL(FluxRecord record) {
         try (Connection conn = MySQLDatabase.connect()) {
 
-            // Converte os dados do Influx
             String pessoa = (String) record.getValueByKey("pessoa");
             String sala = (String) record.getValueByKey("sala");
             Boolean movimento = (Boolean) record.getValue();
@@ -77,13 +76,11 @@ public class TestInflux {
             Timestamp timestamp = tempo != null ? Timestamp.from(tempo) : new Timestamp(System.currentTimeMillis());
 
 
-            //  Verificação de nulos
             if (pessoa == null || sala == null || movimento == null) {
                 System.out.println("Registro ignorado (valores nulos).");
                 return;
             }
 
-            //  Verificação de duplicados em "emergencia"
             String checkSql = "SELECT COUNT(*) FROM emergencia WHERE pessoa = ? AND sala = ? AND tempo = ?";
             try (PreparedStatement checkStmt = conn.prepareStatement(checkSql)) {
                 checkStmt.setString(1, pessoa);
@@ -96,7 +93,6 @@ public class TestInflux {
                 }
             }
 
-            // Inserir na tabela emergencia
             String sqlEmergencia = "INSERT INTO emergencia (pessoa, sala, movimento, tempo) VALUES (?, ?, ?, ?)";
             try (PreparedStatement stmt = conn.prepareStatement(sqlEmergencia)) {
                 stmt.setString(1, pessoa);
@@ -106,7 +102,6 @@ public class TestInflux {
                 stmt.executeUpdate();
             }
 
-            // Inserir na tabela sala_emergencia
             String sqlSala = "INSERT INTO sala_emergencia (sala, ultima_atividade) VALUES (?, ?)";
             try (PreparedStatement stmt = conn.prepareStatement(sqlSala)) {
                 stmt.setString(1, sala);

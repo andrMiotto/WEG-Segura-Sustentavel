@@ -1,55 +1,59 @@
 package weg.seguranca.model;
 
-import jakarta.persistence.*;
-
-@Entity
-@Table(name = "salas")
 public class Sala {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
-    private Integer numero;
+    private int id;
+    private int numero;
     private String bloco;
-    private Integer portaria;
+    private int portaria;
     private String unidade;
-    private Boolean situacaoDeRisco;
+    private boolean situacao_risco;
+    private int id_emergencia_atual;
 
-    @ManyToOne (cascade = CascadeType.ALL)
-    @JoinColumn(name = "id_emergencia_atual")
-    private Emergencia emergenciaAtual;
-
-    public Sala() {}
-
-    public Sala(Integer id, Integer numero, String bloco, Integer portaria, String unidade, Boolean situacaoDeRisco, Emergencia emergenciaAtual) {
+    public Sala(int id, int numero, String bloco, int portaria, String unidade, boolean situacao_risco, int id_emergencia_atual) {
         this.id = id;
         this.numero = numero;
         this.bloco = bloco;
         this.portaria = portaria;
         this.unidade = unidade;
-        this.situacaoDeRisco = situacaoDeRisco;
-        this.emergenciaAtual = emergenciaAtual;
+        this.situacao_risco = situacao_risco;
+        this.id_emergencia_atual = id_emergencia_atual;
     }
 
-    // Getters e Setters
-    public Integer getId() { return id; }
-    public void setId(Integer id) { this.id = id; }
+    public Sala(int numero, String bloco, int portaria, String unidade, boolean situacao_risco, int id_emergencia_atual) {
+        this.numero = numero;
+        this.bloco = bloco;
+        this.portaria = portaria;
+        this.unidade = unidade;
+        this.situacao_risco = situacao_risco;
+        this.id_emergencia_atual = id_emergencia_atual;
+    }
 
-    public Integer getNumero() { return numero; }
-    public void setNumero(Integer numero) { this.numero = numero; }
+    public int getId() {
+        return id;
+    }
 
-    public String getBloco() { return bloco; }
-    public void setBloco(String bloco) { this.bloco = bloco; }
+    public int getNumero() {
+        return numero;
+    }
 
-    public Integer getPortaria() { return portaria; }
-    public void setPortaria(Integer portaria) { this.portaria = portaria; }
+    public String getBloco() {
+        return bloco;
+    }
 
-    public String getUnidade() { return unidade; }
-    public void setUnidade(String unidade) { this.unidade = unidade; }
+    public int getPortaria() {
+        return portaria;
+    }
 
-    public Boolean getSituacaoDeRisco() { return situacaoDeRisco; }
-    public void setSituacaoDeRisco(Boolean situacaoDeRisco) { this.situacaoDeRisco = situacaoDeRisco; }
+    public String getUnidade() {
+        return unidade;
+    }
 
-    public Emergencia getEmergenciaAtual() { return emergenciaAtual; }
-    public void setEmergenciaAtual(Emergencia emergenciaAtual) { this.emergenciaAtual = emergenciaAtual; }
+    public boolean isSituacao_risco() {
+        return situacao_risco;
+    }
+
+    public int getId_emergencia_atual() {
+        return id_emergencia_atual;
+    }
 }

@@ -1,58 +1,89 @@
 package weg.seguranca.model;
 
-import jakarta.persistence.*;
-
-@Entity
-@Table(name = "pessoas")
 public class Pessoa {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String nome;
     private Integer cadastro;
     private String tipo;
-    private Boolean situacaoDeRisco;
+    private int situacao_de_risco;
+    private Integer sala_atual;
+    private Integer emergencia_atual;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id_sala_atual")
-    private Sala salaAtual;
-
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id_emergencia_atual")
-    private Emergencia emergenciaAtual;
-
-    public Pessoa() {}
-
-    public Pessoa(Integer id, String nome, Integer cadastro, String tipo, Boolean situacaoDeRisco, Sala salaAtual, Emergencia idEmergenciaAtual) {
+    public Pessoa(Integer id, String nome, Integer cadastro, String tipo, int situacao_de_risco, Integer sala_atual, Integer emergencia_atual) {
         this.id = id;
         this.nome = nome;
         this.cadastro = cadastro;
         this.tipo = tipo;
-        this.situacaoDeRisco = situacaoDeRisco;
-        this.salaAtual = salaAtual;
-        this.emergenciaAtual = emergenciaAtual;
+        this.situacao_de_risco = situacao_de_risco;
+        this.sala_atual = sala_atual;
+        this.emergencia_atual = emergencia_atual;
     }
 
-    // Getters e Setters
-    public Integer getId() { return id; }
-    public void setId(Integer id) { this.id = id; }
+    public Pessoa(String nome, Integer cadastro, String tipo, int situacao_de_risco, Integer sala_atual, Integer emergencia_atual) {
+        this.nome = nome;
+        this.cadastro = cadastro;
+        this.tipo = tipo;
+        this.situacao_de_risco = situacao_de_risco;
+        this.sala_atual = sala_atual;
+        this.emergencia_atual = emergencia_atual;
+    }
 
-    public String getNome() { return nome; }
-    public void setNome(String nome) { this.nome = nome; }
+    public Integer getId() {
+        return id;
+    }
 
-    public Integer getCadastro() { return cadastro; }
-    public void setCadastro(Integer cadastro) { this.cadastro = cadastro; }
+    public String getNome() {
+        return nome;
+    }
 
-    public String getTipo() { return tipo; }
-    public void setTipo(String tipo) { this.tipo = tipo; }
+    public Integer getCadastro() {
+        return cadastro;
+    }
 
-    public Boolean getSituacaoDeRisco() { return situacaoDeRisco; }
-    public void setSituacaoDeRisco(Boolean situacaoDeRisco) { this.situacaoDeRisco = situacaoDeRisco; }
+    public String getTipo() {
+        return tipo;
+    }
 
-    public Sala getSalaAtual() { return salaAtual; }
-    public void setSalaAtual(Sala salaAtual) { this.salaAtual = salaAtual; }
+    public int getSituacao_de_risco() {
+        return situacao_de_risco;
+    }
 
-    public Emergencia getEmergenciaAtual() { return emergenciaAtual; }
-    public void setEmergenciaAtual(Emergencia emergenciaAtual) { this.emergenciaAtual = emergenciaAtual; }
+    public Integer getSala_atual() {
+        return sala_atual;
+    }
+
+    public Integer getEmergencia_atual() {
+        return emergencia_atual;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public void setCadastro(Integer cadastro) {
+        this.cadastro = cadastro;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
+    public void setSituacao_de_risco(int situacao_de_risco) {
+        this.situacao_de_risco = situacao_de_risco;
+    }
+
+    public void setSala_atual(Integer sala_atual) {
+        this.sala_atual = sala_atual;
+    }
+
+    public void setEmergencia_atual(Integer emergencia_atual) {
+        this.emergencia_atual = emergencia_atual;
+    }
+
+
 }

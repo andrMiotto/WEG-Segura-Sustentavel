@@ -42,7 +42,6 @@ public class TestInflux {
     }
 
     public static List<FluxTable> recebimento() {
-        // Executa a query
         QueryApi queryApi = influx.getQueryApi();
         String flux = "from(bucket: \"" + influx.getBucket() + "\") "
                 + "|> range(start: -1h) "
@@ -50,7 +49,6 @@ public class TestInflux {
 
         List<FluxTable> tables = queryApi.query(flux, influx.getOrg());
 
-        // Itera sobre os resultados
         for (FluxTable table : tables) {
             for (FluxRecord record : table.getRecords()) {
                 System.out.println(

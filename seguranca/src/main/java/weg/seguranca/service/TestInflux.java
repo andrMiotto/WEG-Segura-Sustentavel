@@ -5,8 +5,14 @@ import com.influxdb.client.domain.WritePrecision;
 import com.influxdb.client.write.Point;
 import com.influxdb.query.FluxRecord;
 import com.influxdb.query.FluxTable;
+import weg.seguranca.util.MySQLDatabase;
 import weg.seguranca.util.NoSQLDatabase;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.sql.Timestamp;
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,6 +42,7 @@ public class TestInflux {
     }
 
     public static List<FluxTable> recebimento() {
+        // Executa a query
         QueryApi queryApi = influx.getQueryApi();
         String flux = "from(bucket: \"" + influx.getBucket() + "\") "
                 + "|> range(start: -1h) "
@@ -43,6 +50,7 @@ public class TestInflux {
 
         List<FluxTable> tables = queryApi.query(flux, influx.getOrg());
 
+        // Itera sobre os resultados
         for (FluxTable table : tables) {
             for (FluxRecord record : table.getRecords()) {
                 System.out.println(

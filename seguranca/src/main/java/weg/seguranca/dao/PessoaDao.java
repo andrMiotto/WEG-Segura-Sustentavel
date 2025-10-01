@@ -15,7 +15,7 @@ public class PessoaDao {
 
     public void insert(Pessoa pessoa) throws  SQLException {
         String sql = """
-                INSERT INTO pessoa (nome, cadastro, tipo, situacao_de_risco, sala_atual, emergencia_atual)
+                INSERT INTO pessoas (nome, cadastro, tipo, situacao_de_risco, sala_atual, emergencia_atual)
                 VALUES (?, ?, ?, ?, ?, ?);
                 """;
 
@@ -37,7 +37,7 @@ public class PessoaDao {
     public List<Pessoa> select() throws SQLException{
         String sql = """
                 SELECT id, nome, cadastro, tipo, situacao_de_risco, sala_atual, emergencia_atual
-                FROM pessoa;
+                FROM pessoas;
                 """;
 
         List<Pessoa> pessoas = new ArrayList<>();
@@ -66,7 +66,7 @@ public class PessoaDao {
 
     public void updateSituacaoRisco(Pessoa pessoa) throws SQLException {
         String sql = """
-                UPDATE pessoa SET situacao_de_risco = ? WHERE id = ?;
+                UPDATE pessoas SET situacao_de_risco = ? WHERE id = ?;
                 """;
 
         try (Connection conn = MySQLDatabase.connect();
@@ -81,14 +81,14 @@ public class PessoaDao {
 
     public void updateSalaAtual(Pessoa pessoa) throws SQLException {
         String sql = """
-                UPDATE pessoa SET id_sala_atual = ? WHERE id = ?;
+                UPDATE pessoas SET id_sala_atual = ? WHERE cadastro = ?;
                 """;
 
         try (Connection conn = MySQLDatabase.connect();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
 
             stmt.setInt(1, pessoa.getSala_atual());
-            stmt.setInt(2, pessoa.getId());
+            stmt.setInt(2, pessoa.getCadastro());
 
             stmt.executeUpdate();
         }
@@ -96,7 +96,7 @@ public class PessoaDao {
 
     public void updateEmergenciaAtual(Pessoa pessoa) throws SQLException {
         String sql = """
-                UPDATE pessoa SET id_emergencia_atual = ? WHERE id = ?;
+                UPDATE pessoas SET id_emergencia_atual = ? WHERE id = ?;
                 """;
 
         try (Connection conn = MySQLDatabase.connect();
@@ -110,7 +110,7 @@ public class PessoaDao {
     }
 
     public void delete(int id) throws SQLException {
-        String sql = "DELETE FROM pessoa WHERE id = ?";
+        String sql = "DELETE FROM pessoas WHERE id = ?";
 
         try (Connection conn = MySQLDatabase.connect();
              PreparedStatement stmt = conn.prepareStatement(sql)) {

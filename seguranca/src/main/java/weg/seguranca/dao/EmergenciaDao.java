@@ -14,7 +14,7 @@ public class EmergenciaDao {
         this.conn = conn;
     }
 
-    public void salvar(Emergencia emergencia) throws SQLException {
+    public static void salvar(Emergencia emergencia) throws SQLException {
         String sql = "INSERT INTO emergencias (titulo, descricao, inicio, fim) VALUES (?, ?, ?, ?)";
         try (PreparedStatement stmt = conn.prepareStatement(sql)) {
             stmt.setString(1, emergencia.getTitulo());

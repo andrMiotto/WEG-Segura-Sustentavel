@@ -5,8 +5,8 @@
 #include "DHT.h"
 
 // --- DHT ---
-#define DHTPIN 25       
-#define DHTTYPE DHT22   
+#define DHTPIN 27       
+#define DHTTYPE DHT11
 DHT dht(DHTPIN, DHTTYPE);
 
 // --- RFID ---
@@ -16,13 +16,9 @@ MFRC522 mfrc522(SS_PIN, RST_PIN);
 // (SCK=18, MOSI=23, MISO=19)
 
 // --- LEDS e buzzer ---
-#define LED_VERMELHO 15
-#define LED_VERDE    2
+#define LED_VERMELHO 13
+#define LED_VERDE    12
 #define BUZZER_PIN   26
-
-// --- Ultrassônico ---
-#define TRIG_PIN 12
-#define ECHO_PIN 13
 
 // --- WiFi ---
 const char* ssid = "Edu";
@@ -35,6 +31,8 @@ PubSubClient client(espClient);
 
 // --- VARIÁVEIS ---
 int contadorPessoas = 0;
+unsigned long ultimoBlink = 0;
+bool estadoLed = false; // para piscar o vermelho
 
 struct Usuario {
   String uid;
@@ -44,7 +42,6 @@ Usuario usuarios[50];
 int totalUsuarios = 0;
 
 // ---------------------------- Funções ----------------------------
-
 void setup_wifi() {
   delay(10);
   Serial.println("Conectando ao WiFi...");
@@ -92,18 +89,6 @@ int buscarUsuario(String uid) {
   return -1;
 }
 
-long medirDistancia() {
-  digitalWrite(TRIG_PIN, LOW);
-  delayMicroseconds(2);
-  digitalWrite(TRIG_PIN, HIGH);
-  delayMicroseconds(10);
-  digitalWrite(TRIG_PIN, LOW);
-
-  long duracao = pulseIn(ECHO_PIN, HIGH, 30000); // timeout 30ms
-  long distancia = duracao * 0.034 / 2; // cm
-  return distancia;
-}
-
 String getHoraAtual() {
   struct tm timeinfo;
   if (!getLocalTime(&timeinfo)) {
@@ -121,8 +106,9 @@ void setup() {
   pinMode(LED_VERMELHO, OUTPUT);
   pinMode(LED_VERDE, OUTPUT);
   pinMode(BUZZER_PIN, OUTPUT);
-  pinMode(TRIG_PIN, OUTPUT);
-  pinMode(ECHO_PIN, INPUT);
+
+  // LED vermelho sempre começa ligado
+  digitalWrite(LED_VERMELHO, HIGH);
 
   // Inicializa SPI e RFID
   SPI.begin(18, 19, 23);  
@@ -135,7 +121,7 @@ void setup() {
   setup_wifi();
   client.setServer(mqtt_server, 1883);
 
-  Serial.println("Sistema de Contagem RFID + DHT + Ultrassom com MQTT iniciado.");
+  Serial.println("Sistema de Contagem RFID + DHT com MQTT iniciado.");
 }
 
 // ---------------------------- Loop ----------------------------
@@ -145,75 +131,80 @@ void loop() {
   }
   client.loop();
 
-  // Leitura ultrassônico
-  long distancia = medirDistancia();
-  if (distancia > 0 && distancia < 100) {
-    Serial.print("Distância detectada: ");
-    Serial.print(distancia);
-    Serial.println(" cm");
-
-    // Aciona buzzer por 1s quando detecta movimento
-    digitalWrite(BUZZER_PIN, HIGH);
-    delay(1000);
-    digitalWrite(BUZZER_PIN, LOW);
-  }
-
-  // Verifica cartão RFID
-  if (!mfrc522.PICC_IsNewCardPresent() || !mfrc522.PICC_ReadCardSerial())
-    return;
-
-  String uid = lerUID(mfrc522.uid);
-  String horaAtual = getHoraAtual();
-
-  int idx = buscarUsuario(uid);
-  String acao;
-
-  if (idx == -1) {
-    usuarios[totalUsuarios].uid = uid;
-    usuarios[totalUsuarios].dentro = true;
-    totalUsuarios++;
-    contadorPessoas++;
-    acao = "ENTRADA";
-  } else {
-    if (usuarios[idx].dentro) {
-      usuarios[idx].dentro = false;
-      contadorPessoas--;
-      acao = "SAIDA";
-    } else {
-      usuarios[idx].dentro = true;
-      contadorPessoas++;
-      acao = "ENTRADA";
-    }
-  }
-
-  // Feedback sonoro/visual
-  digitalWrite(LED_VERDE, HIGH);
-  digitalWrite(LED_VERMELHO, LOW);
-  tone(BUZZER_PIN, 1000);
-  delay(300);
-  noTone(BUZZER_PIN);
-  digitalWrite(LED_VERDE, LOW);
-
   // Leitura do DHT
   float temperatura = dht.readTemperature();
   float umidade = dht.readHumidity();
 
-  // Monta mensagem JSON
-  String mensagem = "{";
-  mensagem += "\"uid\":\"" + uid + "\",";
-  mensagem += "\"acao\":\"" + acao + "\",";
-  mensagem += "\"contador\":" + String(contadorPessoas) + ",";
-  mensagem += "\"hora\":\"" + horaAtual + "\",";
-  mensagem += "\"temp\":" + String(temperatura, 1) + ",";
-  mensagem += "\"umid\":" + String(umidade, 1) + ",";
-  mensagem += "\"dist\":" + String(distancia);
-  mensagem += "}";
+  // ---- Alerta de temperatura alta ----
+  if (!isnan(temperatura)) {
+    if (temperatura > 45.0) {
+      // Buzzer contínuo
+      tone(BUZZER_PIN, 1500);
 
-  // Envia via MQTT
-  client.publish("sala/rfid", mensagem.c_str());
+      // LED vermelho piscando (500 ms)
+      unsigned long agora = millis();
+      if (agora - ultimoBlink >= 500) {
+        ultimoBlink = agora;
+        estadoLed = !estadoLed;
+        digitalWrite(LED_VERMELHO, estadoLed ? HIGH : LOW);
+      }
 
-  Serial.println("Enviado: " + mensagem);
+    } else {
+      // Normal: buzzer desligado + vermelho fixo
+      noTone(BUZZER_PIN);
+      digitalWrite(LED_VERMELHO, HIGH);
+    }
+  }
 
-  mfrc522.PICC_HaltA();
-  mfrc522.PCD_StopCrypto1();
+  // ---- RFID ----
+  if (mfrc522.PICC_IsNewCardPresent() && mfrc522.PICC_ReadCardSerial()) {
+    String uid = lerUID(mfrc522.uid);
+    String horaAtual = getHoraAtual();
+
+    int idx = buscarUsuario(uid);
+    String acao;
+
+    if (idx == -1) {
+      usuarios[totalUsuarios].uid = uid;
+      usuarios[totalUsuarios].dentro = true;
+      totalUsuarios++;
+      contadorPessoas++;
+      acao = "ENTRADA";
+    } else {
+      if (usuarios[idx].dentro) {
+        usuarios[idx].dentro = false;
+        contadorPessoas--;
+        acao = "SAIDA";
+      } else {
+        usuarios[idx].dentro = true;
+        contadorPessoas++;
+        acao = "ENTRADA";
+      }
+    }
+
+    // Feedback sonoro/visual
+    digitalWrite(LED_VERDE, HIGH);
+    digitalWrite(LED_VERMELHO, LOW);
+    tone(BUZZER_PIN, 1000);
+    delay(300);
+    noTone(BUZZER_PIN);
+    digitalWrite(LED_VERDE, LOW);
+    digitalWrite(LED_VERMELHO, HIGH);
+
+    // Monta mensagem JSON
+    String mensagem = "{";
+    mensagem += "\"uid\":\"" + uid + "\",";
+    mensagem += "\"acao\":\"" + acao + "\",";
+    mensagem += "\"contador\":" + String(contadorPessoas) + ",";
+    mensagem += "\"hora\":\"" + horaAtual + "\",";
+    mensagem += "\"temp\":" + String(temperatura, 1) + ",";
+    mensagem += "\"umid\":" + String(umidade, 1);
+    mensagem += "}";
+
+    client.publish("sala/rfid", mensagem.c_str());
+    Serial.println("Enviado: " + mensagem);
+
+    mfrc522.PICC_HaltA();
+    mfrc522.PCD_StopCrypto1();
+  }
 }

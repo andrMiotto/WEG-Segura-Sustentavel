@@ -29,6 +29,11 @@ public class Pessoa {
         this.emergencia_atual = emergencia_atual;
     }
 
+    public Pessoa(Integer cadastro, Integer sala_atual) {
+        this.cadastro = cadastro;
+        this.sala_atual = sala_atual;
+    }
+
     public Integer getId() {
         return id;
     }

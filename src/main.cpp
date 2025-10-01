@@ -31,8 +31,8 @@ PubSubClient client(espClient);
 
 // --- VARIÁVEIS ---
 int contadorPessoas = 0;
-unsigned long ultimoBlink = 0;
-bool estadoLed = false; // para piscar o vermelho
+unsigned long ultimoBlink = 0; //para piscar o vermelho quando estiver em temperaturas altas
+bool estadoLed = false; // para piscar o vermelho 
 
 struct Usuario {
   String uid;
@@ -71,7 +71,7 @@ void reconnect() {
     }
   }
 }
-
+//converte o UID do cartão em string hexadecimal.
 String lerUID(MFRC522::Uid uid) {
   String conteudo = "";
   for (byte i = 0; i < uid.size; i++) {

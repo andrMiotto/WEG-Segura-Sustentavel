@@ -6,60 +6,86 @@ import com.influxdb.client.QueryApi;
 import com.influxdb.client.WriteApiBlocking;
 import com.influxdb.client.domain.WritePrecision;
 import com.influxdb.client.write.Point;
+import com.influxdb.query.FluxRecord;
+import com.influxdb.query.FluxTable;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class NoSQLDatabase {
 
     private static final String url = "http://localhost:8086";
-    private static final char[] token = "e8d2ryJeLHE5cyJ5joTVvuPkQsLc1uDMiL8EFAkbLhDGEDVxJ-RfzVpvO5iHRQlzX5I5bTb2qbAYTgwYQtYRgA".toCharArray();
-    private static final String org = "Weg";
+    private static final char[] token = "nU8725HIFJQYxLu0dbOKyVuNjQfrBaZf0bSi6pakaVNkG3BbygOEzSjtTRJ9sZ1JtdHfCZ9YXRPlWCbIQgHr0g==".toCharArray();
+    private static final String org = "WegSegura";
     private static final String bucket = "WegSegura";
 
-    InfluxDBClient client = InfluxDBClientFactory.create(url, token, org, bucket);
-    WriteApiBlocking writeApi = client.getWriteApiBlocking();
-    String query = "from(bucket: \"WegSegura\")\n" +
-            "  |> range(start: -24h)\n" +
-            "  |> filter(fn: (r) => r._measurement == \"logs_sensores\" and r.sala == \"1\")\n" +
-            "  |> aggregateWindow(every: 5m, fn: mean)\n";
-    QueryApi queryApi = client.getQueryApi();
+    public static final InfluxDBClient client = InfluxDBClientFactory.create(url, token, org, bucket);
+    public static final WriteApiBlocking writeApi = client.getWriteApiBlocking();
 
 
     public static void main(String[] args) {
 
-        InfluxDBClient client = InfluxDBClientFactory.create(url, token, org, bucket);
-        WriteApiBlocking writeApi = client.getWriteApiBlocking();
-
         try {
-            Point ponto1 = Point.measurement("logs_sensores")
-                    .addTag("sala", "1")
-                    .addTag("pessoa", "10")
-                    .addField("ha_movimento_na_sala", true)
-                    .time(System.currentTimeMillis(), WritePrecision.MS);
 
-            Point ponto2 = Point.measurement("logs_sensores")
-                    .addTag("sala", "2")
-                    .addTag("pessoa", "12")
-                    .addField("ha_movimento_na_sala", false)
-                    .time(System.currentTimeMillis(), WritePrecision.MS);
 
-            Point ponto3 = Point.measurement("logs_sensores")
-                    .addTag("sala", "3")
-                    .addTag("pessoa", "13")
-                    .addField("ha_movimento_na_sala", true)
-                    .time(System.currentTimeMillis(), WritePrecision.MS);
+            QueryApi queryApi = client.getQueryApi();
 
-            writeApi.writePoint(ponto1);
-            writeApi.writePoint(ponto2);
-            writeApi.writePoint(ponto3);
+            recebimento();
 
-            System.out.println("Dados inseridos com sucesso!");
-        } catch (Exception e) {
-            e.printStackTrace();
+
         } finally {
             client.close();
         }
+
+
+    }
+
+    public static void insertTeste(){
+        List<Point> pontos = new ArrayList<>();
+
+        Point ponto1 = Point.measurement("logs_sensores")
+                .addTag("sala","211")
+                .addTag("pessoa","112")
+                .addField("ha_movimento_na_sala", true)
+                .time(System.currentTimeMillis(), WritePrecision.MS);
+
+        Point ponto2 = Point.measurement("logs_sensores")
+                .addTag("sala", "105")
+                .addTag("pessoa", "12345")
+                .addField("ha_movimento_na_sala", false)
+                .time(System.currentTimeMillis(), WritePrecision.MS);
+
+        pontos.add(ponto1);
+
+        writeApi.writePoint(ponto1); //teste
+
+        System.out.println("Dados inseridos com sucesso!");
+    }
+
+    public static List<FluxTable> recebimento(){
+        // Executa a query
+        QueryApi queryApi = client.getQueryApi();
+        String flux = "from(bucket: \"" + bucket + "\") "
+                + "|> range(start: -1h) "
+                + "|> filter(fn: (r) => r._measurement == \"logs_sensores\")";
+
+        List<FluxTable> tables = queryApi.query(flux, org);
+
+        // Itera sobre os resultados
+        for (FluxTable table : tables) {
+            for (FluxRecord record : table.getRecords()) {
+                System.out.println(
+                        "Tempo: " + record.getTime() +
+                                " | Pessoa: " + record.getValueByKey("pessoa") +
+                                " | Sala: " + record.getValueByKey("sala") +
+                                " | Movimento: " + record.getValue()
+                );
+            }
+        }
+
+        return tables;
     }
 }

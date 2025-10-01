@@ -23,7 +23,7 @@ public class MySQLDatabase {
                 System.out.println("Falha na conexão.");
             }
         } catch (SQLException e){
-
+            e.printStackTrace();
         }
     }
 

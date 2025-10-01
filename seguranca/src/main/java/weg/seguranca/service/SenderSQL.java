@@ -26,7 +26,7 @@ public class SenderSQL {
                 return;
             }
 
-            String checkSql = "SELECT COUNT(*) FROM emergencia WHERE pessoa = ? AND sala = ? AND tempo = ?";
+            String checkSql = "SELECT COUNT(*) FROM emergencias WHERE pessoa = ? AND sala = ? AND tempo = ?";
             try (PreparedStatement checkStmt = conn.prepareStatement(checkSql)) {
                 checkStmt.setString(1, pessoa);
                 checkStmt.setString(2, sala);
@@ -38,16 +38,7 @@ public class SenderSQL {
                 }
             }
 
-            String sqlEmergencia = "INSERT INTO emergencia (pessoa, sala, movimento, tempo) VALUES (?, ?, ?, ?)";
-            try (PreparedStatement stmt = conn.prepareStatement(sqlEmergencia)) {
-                stmt.setString(1, pessoa);
-                stmt.setString(2, sala);
-                stmt.setBoolean(3, movimento != null ? movimento : false);
-                stmt.setTimestamp(4, timestamp);
-                stmt.executeUpdate();
-            }
-
-            String sqlSala = "INSERT INTO sala_emergencia (sala, ultima_atividade) VALUES (?, ?)";
+            String sqlSala = "INSERT INTO salas_emergencia (sala, emergencia_id) VALUES (?, ?)";
             try (PreparedStatement stmt = conn.prepareStatement(sqlSala)) {
                 stmt.setString(1, sala);
                 stmt.setTimestamp(2, timestamp);

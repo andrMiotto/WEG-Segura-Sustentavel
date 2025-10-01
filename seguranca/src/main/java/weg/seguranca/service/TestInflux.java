@@ -18,15 +18,21 @@ public class TestInflux {
         List<Point> pontos = new ArrayList<>();
 
         Point ponto1 = Point.measurement("logs_sensores")
-                .addTag("sala","211")
-                .addTag("pessoa","112")
                 .addField("ha_movimento_na_sala", true)
+                .addTag("pessoa", "81787")
+                .addTag("sala", "211")
+                .addTag("temperatura", "50")
+                .addTag("umidade", "20")
+
                 .time(System.currentTimeMillis(), WritePrecision.MS);
 
         Point ponto2 = Point.measurement("logs_sensores")
-                .addTag("sala", "105")
-                .addTag("pessoa", "12345")
                 .addField("ha_movimento_na_sala", false)
+                .addTag("pessoa", "12345")
+                .addTag("sala", "105")
+                .addTag("temperatura", "30")
+                .addTag("umidade", "40")
+
                 .time(System.currentTimeMillis(), WritePrecision.MS);
 
         influx.getWriteApi().writePoint(ponto1); //teste
@@ -47,9 +53,12 @@ public class TestInflux {
             for (FluxRecord record : table.getRecords()) {
                 System.out.println(
                         "Tempo: " + record.getTime() +
-                                " | Pessoa: " + record.getValueByKey("pessoa") +
-                                " | Sala: " + record.getValueByKey("sala") +
-                                " | Movimento: " + record.getValue()
+                        " | Pessoa: " + record.getValueByKey("pessoa") +
+                        " | Sala: " + record.getValueByKey("sala") +
+                        " | Movimento: " + record.getValue() +
+                        " | Temperatura: " + record.getValueByKey("temperatura") +
+                        " | Umidade: " + record.getValueByKey("umidade")
+
                 );
 
                 SenderSQL.salvarMySQL(record);

@@ -62,9 +62,6 @@ O projeto permite controle em tempo real, emissão de relatórios automáticos e
 
 <br>
 
-
-
-
 # Tecnologias Utilizadas 👾
 
 <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 15px;">
@@ -104,6 +101,7 @@ IoT (Internet das Coisas) 📡: Trabalharam na comunicação entre dispositivos 
 
 Eletrônica 🔌: Montaram e ajustaram os circuitos, sensores e componentes necessários para o funcionamento físico do projeto.
 
+<br>
 
 # Conformidade com a LGPD 🔐
 
@@ -127,12 +125,45 @@ O sistema foi projetado para seguir integralmente a Lei Geral de Proteção de D
   
 - Modo teste sem registro de dados reais
 
-  <br>
+<br>
 
+# Eletrônica 🔌
+
+### Componentes Utilizados:
+- **RFID** – para detecção de entrada/saída  
+- **DHT** – sensor de temperatura e umidade  
+- **Resistor** – limita ou controla a corrente elétrica  
+- **LED** – sinalização visual  
+- **Fios** – conduzem a corrente elétrica entre componentes  
+- **Buzzer** – alerta sonoro em situações de evacuação ou risco ambiental  
+
+### Pinos Utilizados no ESP32:
+- **RFID:**
+   - SDA → D5
+   - SCK → D18
+   - MOSI → D23
+   - MISO → D19
+   - RST → D22  
+- **DHT:**
+   - DATA → D27  
+- **LEDs:**
+   - Vermelho → D13
+   - Verde → D12  
+- **Buzzer:**
+   - Pino de Controle → D26
+
+<br>
 
 # Projeto Montado 🧑‍💻
 
+<p align="left">
+  <img src="https://raw.githubusercontent.com/andrMiotto/WEG-Segura-Sustentavel/main/assets/README/gif-montagem.gif" 
+       width="400" height="300" style="object-fit: cover; margin-right: 20px;" />
+  <img src="https://raw.githubusercontent.com/andrMiotto/WEG-Segura-Sustentavel/main/assets/README/imagem-montagem.jpeg" 
+       width="300" height="400" style="object-fit: cover;" />
+</p>
 
+<br>
 
 # Como Acessar ❓
 
@@ -272,6 +303,7 @@ http://localhost:8080
     </td>
   </tr>
 </table>
+
 
 
 

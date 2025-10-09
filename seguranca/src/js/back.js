@@ -2,25 +2,27 @@ import mysql from 'mysql2/promise';
 import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import 'dotenv/config';
+
 const app = express()
 const PORT = 3000;
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-app.use(express.static(path.join(__dirname, '../static')));
-app.use(express.static(path.join(__dirname, '../templates')));
+app.use(express.static(path.join(__dirname, '../main/resources/static')));
+app.use(express.static(path.join(__dirname, '../main/resources/templates')));
 
 app.listen(PORT, () => {
   console.log(`Acesso aqui: http://localhost:${PORT}`);
 });
 
 const db = await mysql.createConnection({
-    host: 'yamabiko.proxy.rlwy.net',
-    port: 23402,
-    user: 'root',
-    password: 'ZtzdINLCVuLMfpSTlHudposOErVCfBhq',
-    database: 'railway'
+    host: process.env.HOST,
+    port: process.env.PORT,
+    user: process.env.USER,
+    password: process.env.PASSWORD,
+    database: process.env.DATABASE
 })
 
 app.get('/api/salas', async(req, res) => {

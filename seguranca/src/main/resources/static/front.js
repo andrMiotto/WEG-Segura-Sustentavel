@@ -3,6 +3,7 @@ let contSalasVazias = 0;
 let totalPessoas = 0;
 let contDivs = 1;
 let index = 1;
+let dataAtual = Date.now();
 // <summary>
 //  variaveis declaradas aqui em cima por persistência
 // </summary>
@@ -12,6 +13,7 @@ fetch('/api/salas').then(res => res.json()).then(salas => {
         let salaIndex = "sala" + (i+1);
 
         document.getElementById(salaIndex).innerHTML = sala.numero;
+        console.log(sala);
     })
 })
 
